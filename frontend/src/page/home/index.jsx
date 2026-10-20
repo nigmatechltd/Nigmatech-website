@@ -630,12 +630,13 @@ function Home() {
             </div>
           </article>
         </div>
+        <div className="margin"></div>
       </section>
 
       <section className="home-section faq-section">
         <div className="home-container faq-grid">
-          <div className="section-copy">
-            <Eyebrow>GOOD QUESTIONS</Eyebrow>
+          <div className="section-copy-2">
+            <Eyebrow className='eyebrow'>GOOD QUESTIONS</Eyebrow>
             <h2>Questions, answered</h2>
             <p>A few useful things to know about working with Nigmatech.</p>
             <Link className="home-text-link" to="/contact">
