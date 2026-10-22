@@ -1149,7 +1149,7 @@ font-size: 17px;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 26px;
   margin-top: 20px;
-  height: 300px;
+  min-height: 300px;
   padding: 12px;
   border: 1px solid rgb(5 10 11 / 5%);
   border-radius: 14px;
@@ -1236,7 +1236,7 @@ font-size: 17px;
   font-size: 20px;
 }
 .story-copy h3 {
-  
+
   margin: 0;
   font-size: 25px;
   line-height: 1.2;
@@ -1330,6 +1330,9 @@ font-size: 17px;
   overflow: hidden;
   padding: 50px 24px;
   border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   background: linear-gradient(
     110deg,
     var(--nigma-ink),
@@ -1341,6 +1344,8 @@ font-size: 17px;
 }
 .home-cta .home-eyebrow {
   justify-content: center;
+  font-size: 17px;
+  margin-bottom: 8px;
 }
 .home-cta h2 {
   margin: 0;
@@ -1351,7 +1356,7 @@ font-size: 17px;
   max-width: 510px;
   margin: 10px auto 0;
   color: rgb(255 255 255 / 65%);
-  font-size: 11px;
+  font-size: 15px;
 }
 .home-cta .home-actions {
   justify-content: center;
@@ -1423,7 +1428,7 @@ font-size: 17px;
   }
   .home-actions {
     display: grid;
-    gap: 8px;
+    gap: 15px;
     margin-top: 18px;
   }
   .hero-prove-container {
@@ -1667,6 +1672,7 @@ font-size: 17px;
     grid-template-columns: 1fr;
     gap: 5px;
     margin-top: 12px;
+    min-height: 0;
     padding: 9px;
   }
   .story-copy {
@@ -1674,6 +1680,9 @@ font-size: 17px;
   }
   .story-copy h3 {
     font-size: 22px;
+  }
+  .story-copy p {
+    font-size: 17px;
   }
   .faq-grid {
     gap: 19px;
@@ -1700,7 +1709,7 @@ font-size: 17px;
   }
   .home-cta > p {
     max-width: 330px;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 1.6;
   }
 }
