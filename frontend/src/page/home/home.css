@@ -632,7 +632,7 @@ font-size: 17px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
-.fact-grid article {
+.fact-grid [data-slot="card"] {
   display: flex;
   min-height: 126px;
   flex-direction: column;
@@ -643,7 +643,7 @@ font-size: 17px;
   background: rgb(255 255 255 / 65%);
   box-shadow: 0 12px 30px rgb(5 10 11 / 4%);
 }
-.fact-grid article:first-child {
+.fact-grid [data-slot="card"]:first-child {
   border-color: rgb(37 161 176 / 18%);
   background: linear-gradient(
     145deg,
@@ -1149,7 +1149,7 @@ font-size: 17px;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 26px;
   margin-top: 20px;
-  height: 300px;
+  min-height: 300px;
   padding: 12px;
   border: 1px solid rgb(5 10 11 / 5%);
   border-radius: 14px;
@@ -1236,7 +1236,7 @@ font-size: 17px;
   font-size: 20px;
 }
 .story-copy h3 {
-  
+
   margin: 0;
   font-size: 25px;
   line-height: 1.2;
@@ -1260,14 +1260,14 @@ font-size: 17px;
   display: grid;
   gap: 8px;
 }
-.faq-list details {
+.faq-list [data-slot="accordion-item"] {
   overflow: hidden;
   border: 1px solid rgb(5 10 11 / 7%);
   border-radius: 10px;
   background: rgb(255 255 255 / 76%);
   box-shadow: 0 6px 18px rgb(5 10 11 / 3%);
 }
-.faq-list summary {
+.faq-list [data-slot="accordion-trigger"] {
   display: flex;
   min-height: 52px;
   align-items: center;
@@ -1280,14 +1280,14 @@ font-size: 17px;
   font-weight: 650;
   list-style: none;
 }
-.faq-list summary::-webkit-details-marker {
+.faq-list [data-slot="accordion-trigger"]::-webkit-details-marker {
   display: none;
 }
-.faq-list summary:focus-visible {
+.faq-list [data-slot="accordion-trigger"]:focus-visible {
   outline: 2px solid var(--nigma-teal);
   outline-offset: -3px;
 }
-.faq-list summary > span {
+.faq-list [data-slot="accordion-trigger"] > span {
   position: relative;
   width: 20px;
   height: 20px;
@@ -1296,24 +1296,17 @@ font-size: 17px;
   border-radius: 50%;
   background: var(--nigma-white);
 }
-.faq-list summary > span::before,
-.faq-list summary > span::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 1px;
-  background: var(--nigma-teal-dark);
-  content: "";
-  transform: translate(-50%, -50%);
+.faq-list [data-slot="accordion-trigger"] [data-slot="accordion-trigger-icon"] {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--nigma-white);
+  color: var(--nigma-teal-dark);
 }
-.faq-list summary > span::after {
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-.faq-list details[open] summary > span::after {
-  display: none;
-}
-.faq-list details > p {
+.faq-list [data-slot="accordion-content"] > div {
   max-width: 650px;
   margin: -2px 44px 15px 15px;
   color: var(--muted-foreground);
@@ -1330,6 +1323,9 @@ font-size: 17px;
   overflow: hidden;
   padding: 50px 24px;
   border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   background: linear-gradient(
     110deg,
     var(--nigma-ink),
@@ -1341,6 +1337,8 @@ font-size: 17px;
 }
 .home-cta .home-eyebrow {
   justify-content: center;
+  font-size: 17px;
+  margin-bottom: 8px;
 }
 .home-cta h2 {
   margin: 0;
@@ -1351,7 +1349,7 @@ font-size: 17px;
   max-width: 510px;
   margin: 10px auto 0;
   color: rgb(255 255 255 / 65%);
-  font-size: 11px;
+  font-size: 15px;
 }
 .home-cta .home-actions {
   justify-content: center;
@@ -1423,7 +1421,7 @@ font-size: 17px;
   }
   .home-actions {
     display: grid;
-    gap: 8px;
+    gap: 15px;
     margin-top: 18px;
   }
   .hero-prove-container {
@@ -1510,7 +1508,7 @@ font-size: 17px;
     gap: 8px;
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  .fact-grid article {
+  .fact-grid [data-slot="card"] {
     min-height: 105px;
     padding: 13px;
     border-radius: 11px;
@@ -1667,6 +1665,7 @@ font-size: 17px;
     grid-template-columns: 1fr;
     gap: 5px;
     margin-top: 12px;
+    min-height: 0;
     padding: 9px;
   }
   .story-copy {
@@ -1675,15 +1674,18 @@ font-size: 17px;
   .story-copy h3 {
     font-size: 22px;
   }
+  .story-copy p {
+    font-size: 17px;
+  }
   .faq-grid {
     gap: 19px;
   }
-  .faq-list summary {
+  .faq-list [data-slot="accordion-trigger"] {
     min-height: 49px;
     padding: 11px 12px;
     font-size: 18px;
   }
-  .faq-list details > p {
+  .faq-list [data-slot="accordion-content"] > div {
     margin-right: 35px;
     margin-left: 12px;
     font-size: 15px;
@@ -1700,7 +1702,7 @@ font-size: 17px;
   }
   .home-cta > p {
     max-width: 330px;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 1.6;
   }
 }
