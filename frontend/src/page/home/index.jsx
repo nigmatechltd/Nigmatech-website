@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../components/ui/accordion";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
+import { Card } from "../../components/ui/card";
+import {
   ArrowRight,
   ArrowUpRight,
   Building2,
@@ -181,9 +190,9 @@ const faqs = [
 
 function Eyebrow({ children, light = false }) {
   return (
-    <p className={`home-eyebrow${light ? " home-eyebrow-light" : ""}`}>
+    <Badge variant="ghost" className={`home-eyebrow h-auto rounded-none border-0 bg-transparent px-0 py-0 text-inherit${light ? " home-eyebrow-light" : ""}`}>
       {children}
-    </p>
+    </Badge>
   );
 }
 
@@ -298,22 +307,19 @@ function Home() {
       <section className="home-hero">
         <div className="home-container hero-layout">
           <div className="hero-copy">
-            <span className="hero-badge">Nigmatech. Lagos, Nigeria</span>
+            <Badge variant="outline" className="hero-badge h-auto">Nigmatech. Lagos, Nigeria</Badge>
             <h1>Software that keeps your business moving.</h1>
             <p className="build">
               We build Novia, the all-in-one platform for cloud kitchens and Impliment ERP software businesses actually use.
               Then we stay to support it.
             </p>
             <div className="home-actions">
-              <Link
-                className="home-button home-button-primary"
-                to="/solution/nuvio"
-              >
+              <Button render={<Link to="/solution/nuvio" />} className="home-button home-button-primary h-auto">
                 Book a demo <ArrowRight size={15} />
-              </Link>
-              <Link className="home-button home-button-outline" to="/contact">
+              </Button>
+              <Button render={<Link to="/contact" />} variant="outline" className="home-button home-button-outline h-auto">
                 Explore solutions
-              </Link>
+              </Button>
             </div>
             <div className='hero-prove-container'>
                 <div className="hero-proof">
@@ -349,9 +355,9 @@ function Home() {
         <div className="home-container sector-row">
           
           {sectors.map((item) => (
-            <span className="sector-chip" key={item}>
+            <Badge variant="outline" className="sector-chip h-auto" key={item}>
               {item}
-            </span>
+            </Badge>
           ))}
         </div>
       </section>
@@ -374,26 +380,26 @@ function Home() {
             </Link>
           </div>
           <div className="fact-grid">
-            <article>
+            <Card role="article" className="gap-0 p-0 ring-0">
               <b>2</b>
               <strong>focused software solutions</strong>
               <small>Nuvio + ERP software</small>
-            </article>
-            <article>
+            </Card>
+            <Card role="article" className="gap-0 p-0 ring-0">
               <b>One</b>
               <strong>team from planning to support</strong>
               <small>Built around your workflow</small>
-            </article>
-            <article>
+            </Card>
+            <Card role="article" className="gap-0 p-0 ring-0">
               <b>Lagos</b>
               <strong>local context, practical delivery</strong>
               <small>Made for business here</small>
-            </article>
-             <article>
+            </Card>
+             <Card role="article" className="gap-0 p-0 ring-0">
               <b>24/7</b>
               <strong>local context, practical delivery</strong>
               <small>Made for business here</small>
-            </article>
+            </Card>
           </div>
         </div>
       </section>
@@ -408,7 +414,7 @@ function Home() {
           </div>
           <div className="solution-grid">
             {solutions.map(({ id, label, title, copy, to, action, Icon }) => (
-              <article className={`solution-card solution-${id}`} key={id}>
+              <Card role="article" className={`solution-card solution-${id} gap-0 ring-0`} key={id}>
                 <div className="solution-meta">
                   <span>
                     <Icon size={15} />
@@ -441,7 +447,7 @@ function Home() {
                   {action}
                   <ArrowRight size={14} />
                 </Link>
-              </article>
+              </Card>
             ))}
           </div>
         </div>
@@ -457,13 +463,13 @@ function Home() {
           </div>
           <div className="capability-grid">
             {capabilities.map(({ Icon, title, copy }, i) => (
-              <article className="capability-card" key={title}>
+              <Card role="article" className="gap-0 ring-0 capability-card" key={title}>
                 <span className="capability-icon">
                   <Icon size={25} />
                 </span>
                 <h3>{title}</h3>
                 <p>{copy}</p>
-              </article>
+              </Card>
             ))}
           </div>
           <div className="capability-stats">
@@ -495,14 +501,14 @@ function Home() {
           </div>
           <div className="industry-grid">
             {industries.map(({ Icon, title, copy }) => (
-              <article className="industry-card" key={title}>
+              <Card role="article" className="gap-0 ring-0 industry-card" key={title}>
                 <span className="industry-icon">
                   <Icon size={25} />
                 </span>
                 <h3>{title}</h3>
                 <p>{copy}</p>
                 <ArrowUpRight size={30} />
-              </article>
+              </Card>
             ))}
           </div>
         </div>
@@ -519,20 +525,20 @@ function Home() {
               When neither solution fits, we design and build software around your process connect
               it to the system you already use.
             </p>
-            <Link className="home-button home-button-dark" to="/contact">
+            <Button render={<Link to="/contact" />} className="home-button home-button-dark h-auto">
               Discuss your project <ArrowRight size={15} />
-            </Link>
+            </Button>
           </div>
           <div className="service-grid">
             {services.map(({ Icon, title, copy }) => (
-              <article className="service-card" key={title}>
+              <Card role="article" className="gap-0 ring-0 service-card" key={title}>
                 <span>
                   <Icon size={26} />
                 </span>
                 <ArrowUpRight size={14} />
                 <h3>{title}</h3>
                 <p>{copy}</p>
-              </article>
+              </Card>
             ))}
           </div>
         </div>
@@ -552,14 +558,14 @@ function Home() {
           </div>
           <div className="process-grid">
             {steps.map(({ number, title, copy }, i) => (
-              <article className="process-card" key={number}>
+              <Card role="article" className="gap-0 ring-0 process-card" key={number}>
                 <div>
                   <b>{number}</b>
                   {i < steps.length - 1 && <span />}
                 </div>
                 <h3>{title}</h3>
                 <p>{copy}</p>
-              </article>
+              </Card>
             ))}
           </div>
         </div>
@@ -577,7 +583,7 @@ function Home() {
           </div>
           <div className="principle-grid">
             {principles.map(({ title, copy }, i) => (
-              <article className="principle-card" key={title}>
+              <Card role="article" className="gap-0 ring-0 principle-card" key={title}>
                 <div>
                   <span>“</span>
                   <small>BUILT AROUND THE WORK</small>
@@ -593,10 +599,10 @@ function Home() {
                   </span>
                 </footer>
                 <strong>0{i + 1}</strong>
-              </article>
+              </Card>
             ))}
           </div>
-          <article className="story-card">
+          <Card role="article" className="gap-0 ring-0 story-card">
             <div className="story-visual">
               <div className="story-window">
                 <div>
@@ -628,7 +634,7 @@ function Home() {
                 See how Nuvio works <ArrowRight size={14} />
               </Link>
             </div>
-          </article>
+          </Card>
         </div>
         
       </section>
@@ -643,17 +649,18 @@ function Home() {
               Ask us something else <ArrowRight size={14} />
             </Link>
           </div>
-          <div className="faq-list">
+          <Accordion className="faq-list" defaultValue={["home-faq-0"]}>
             {faqs.map(({ q, a }, i) => (
-              <details key={q} open={i === 0}>
-                <summary>
+              <AccordionItem key={q} value={`home-faq-${i}`} className="rounded-[10px] border border-black/[.07] bg-white/[.76] shadow-[0_6px_18px_rgba(5,10,11,.03)]">
+                <AccordionTrigger className="min-h-[52px] items-center gap-[18px] px-[15px] py-3 text-left text-[17px] font-semibold hover:no-underline">
                   {q}
-                  <span />
-                </summary>
-                <p>{a}</p>
-              </details>
+                </AccordionTrigger>
+                <AccordionContent className="max-w-[650px] px-[15px] pb-[15px] text-base leading-[1.7] text-muted-foreground">
+                  {a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
@@ -667,12 +674,12 @@ function Home() {
               next step.
             </p>
             <div className="home-actions">
-              <Link className="home-button home-button-primary" to="/contact">
+            <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
                 Book a demo <ArrowRight size={15} />
-              </Link>
-              <Link className="home-button home-button-outline" to="/contact">
+            </Button>
+            <Button render={<Link to="/contact" />} variant="outline" className="home-button home-button-outline h-auto">
                 Talk to us <ArrowUpRight size={15} />
-              </Link>
+            </Button>
             </div>
           </div>
         </div>
