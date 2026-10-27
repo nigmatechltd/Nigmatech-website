@@ -15,9 +15,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/case-study" element={<CaseStudy />} />
+      
+      </Route>
         <Route path="/solution/erp-software" element={<ERPSoftware />} />
         <Route path="/solution/nuvio" element={<Nuvio />} />
-      </Route>
     </Routes>
   )
 }

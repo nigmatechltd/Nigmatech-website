@@ -101,7 +101,7 @@ function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-8">
+        <div className="mx-auto flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-8">
           <p className="text-md text-white/50">
             © {new Date().getFullYear()} Nigmatech Limited. All rights reserved.
           </p>

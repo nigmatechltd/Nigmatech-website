@@ -1499,10 +1499,15 @@ font-size: 17px;
     font-size: 29px;
     margin-bottom: 10px;
   }
-  .section-copy > p:not(.home-eyebrow),
+  .section-copy > p:not(),
   .section-heading > p {
     margin-top: 12px;
     font-size: 20px;
+  }
+  .eye {
+    margin-top: 12px;
+    font-size: 20px;
+    color: var(--nigma-teal-dark);
   }
   .fact-grid {
     gap: 8px;

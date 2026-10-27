@@ -188,13 +188,13 @@ const faqs = [
   },
 ];
 
-function Eyebrow({ children, light = false }) {
-  return (
-    <Badge variant="ghost" className={`home-eyebrow h-auto rounded-none border-0 bg-transparent px-0 py-0 text-inherit${light ? " home-eyebrow-light" : ""}`}>
-      {children}
-    </Badge>
-  );
-}
+// function Eyebrow({ children, light = false }) {
+//   return (
+//     <Badge variant="ghost" className={`home-eyebrow text-4xl h-auto rounded-none border-0 bg-transparent px-0 py-0 text-inherit${light ? " home-eyebrow-light" : ""}`}>
+//       {children}
+//     </Badge>
+//   );
+// }
 
 function DashboardPreview() {
   const income = [35, 52, 42, 68, 55, 88, 62, 74, 48, 93, 65, 78];
@@ -548,7 +548,7 @@ function Home() {
         <div className="home-container">
           <div className="section-heading heading-row">
             <div className="section-heading">
-              <Eyebrow>OUR APPROACH</Eyebrow>
+              <span className="eye">OUR APPROACH</span>
               <h2>A clear path from first call to go-live, and beyond</h2>
             </div>
             <p>
@@ -574,7 +574,7 @@ function Home() {
       <section className="home-section principles-section">
         <div className="home-container">
           <div className="section-heading">
-            <Eyebrow>WHAT GOOD SYSTEMS MAKE POSSIBLE</Eyebrow>
+            <span className="eye">WHAT GOOD SYSTEMS MAKE POSSIBLE</span>
             <h2>Trusted by the teams who use it every day</h2>
             <p>
               Useful software gives people more clarity, continuity, and room to
@@ -623,7 +623,7 @@ function Home() {
               </div>
             </div>
             <div className="story-copy">
-              <Eyebrow>PRODUCT SPOTLIGHT</Eyebrow>
+              <span className="eye">PRODUCT SPOTLIGHT</span>
               <h3>How Nuvio brings food channels together in one place</h3>
               <p>
                 Orders, kitchen activity, and customer updates can move as one
@@ -642,7 +642,7 @@ function Home() {
       <section className="home-section faq-section">
         <div className="home-container faq-grid">
           <div className="section-copy">
-            <Eyebrow>GOOD QUESTIONS</Eyebrow>
+            <span className="eye">GOOD QUESTIONS</span>
             <h2>Questions, answered</h2>
             <p>A few useful things to know about working with Nigmatech.</p>
             <Link className="home-text-link" to="/contact">
@@ -667,7 +667,7 @@ function Home() {
       <section className="home-cta-section">
         <div className="home-container">
           <div className="home-cta">
-            <Eyebrow>LET&apos;S MOVE YOUR BUSINESS FORWARD</Eyebrow>
+            
             <h2>Ready to see it in action?</h2>
             <p>
               Tell us what your team needs. We&apos;ll help you find the right
