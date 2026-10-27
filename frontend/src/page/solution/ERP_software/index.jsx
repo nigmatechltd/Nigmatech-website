@@ -29,6 +29,7 @@ import {
 import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
 import { Card } from "../../../components/ui/card";
+import Footer from "@/components/layout/Footer";
 
 const industries = [
   "Manufacturing",
@@ -781,6 +782,7 @@ function ERPSoftware() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

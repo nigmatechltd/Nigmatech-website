@@ -23,6 +23,7 @@ import {
   TableHeader,
   TableRow,
 } from "../../../components/ui/table";
+import Footer from "@/components/layout/Footer";
 
 const plans = [
   {
@@ -428,6 +429,7 @@ function Nuvio() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
