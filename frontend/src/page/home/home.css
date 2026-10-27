@@ -1499,7 +1499,7 @@ font-size: 17px;
     font-size: 29px;
     margin-bottom: 10px;
   }
-  .section-copy > p:not(),
+  .section-copy > p,
   .section-heading > p {
     margin-top: 12px;
     font-size: 20px;
