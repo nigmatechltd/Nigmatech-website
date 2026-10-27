@@ -30,6 +30,8 @@ const labelClass = 'block text-xs font-semibold text-nigma-ink'
 function Contact() {
   const [interest, setInterest] = useState('Nuvio')
   const [submitted, setSubmitted] = useState(false)
+  const [demoEmail, setDemoEmail] = useState('ada@')
+  const [demoCompany, setDemoCompany] = useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -42,7 +44,7 @@ function Contact() {
         <div aria-hidden="true" className="pointer-events-none absolute right-0 top-20 z-0 size-[30rem] translate-x-1/4 rounded-full bg-nigma-teal/25 blur-3xl" />
         <div className="relative z-10 mx-auto grid w-[min(1220px,calc(100%-40px))] items-center gap-10 sm:w-[min(1220px,calc(100%-64px))] sm:grid-cols-2 sm:gap-8 xl:gap-16">
           <div className="pt-1 lg:pt-0">
-            <Badge variant="outline" className="h-auto gap-2 rounded-full border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/75">
+            <Badge variant="outline" className="h-auto gap-2 rounded-full border-white/15 bg-white/[0.06] px-4 py-2 text-md text-white/75">
               <span className="size-1.5 rounded-full bg-nigma-teal-light" />
               Book a demo
             </Badge>
@@ -143,7 +145,7 @@ function Contact() {
                 Your details are ready. This form is not connected to a booking service yet, so your request has not been sent. Please email info@nigmatech.net to reach us.
               </p>
             ) : (
-              <p className="mt-3 text-[11px] leading-4 text-muted-foreground">We&apos;ll only use your details to reply to this enquiry.</p>
+              <p className="mt-3 text-[14px] leading-4 text-muted-foreground">We&apos;ll only use your details to reply to this enquiry.</p>
             )}
             </form>
           </Card>
@@ -152,7 +154,7 @@ function Contact() {
 
       <section className="bg-[radial-gradient(ellipse_at_72%_28%,rgba(191,227,231,0.32),transparent_44%),#f3f6f5] py-14 sm:py-16 lg:py-20">
         <div className="mx-auto w-[min(1220px,calc(100%-40px))] sm:w-[min(1220px,calc(100%-64px))]">
-          <p className="text-xs font-bold text-nigma-teal-dark">Form states</p>
+          <p className="text-xl font-bold text-nigma-teal-dark">Form states</p>
           <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight sm:text-[38px]">Success and validation</h2>
           <p className="mt-2 text-sm leading-6 text-muted-foreground sm:text-base">A clear confirmation and helpful feedback keep every enquiry easy to complete.</p>
 
@@ -160,8 +162,8 @@ function Contact() {
             <Card role="article" className="gap-0 rounded-2xl border border-white/90 bg-white/55 p-5 ring-0 shadow-[0_14px_38px_rgba(5,10,11,0.07)] sm:p-7">
               <span className="flex size-9 items-center justify-center rounded-full bg-nigma-teal-pale text-nigma-teal-dark"><CheckCircle2 aria-hidden="true" className="size-5" /></span>
               <h3 className="mt-4 font-heading text-lg font-semibold">Thanks, we&apos;ve got it</h3>
-              <p className="mt-2 max-w-md text-xs leading-5 text-muted-foreground">Example confirmation shown after a connected form submission. In the meantime, see how Wunmax uses Nuvio.</p>
-              <Button render={<Link to="/case-study" />} className="mt-4 h-auto min-h-9 gap-2 rounded-full bg-white px-4 text-xs font-bold text-nigma-ink shadow-sm hover:bg-nigma-teal-pale">
+              <p className="mt-2 max-w-md text-[14px] leading-5 text-muted-foreground">Example confirmation shown after a connected form submission. In the meantime, see how Wunmax uses Nuvio.</p>
+              <Button render={<Link to="/case-study" />} className="mt-4 h-auto min-h-10 gap-2 rounded-full bg-white px-4 text-xs font-bold text-nigma-ink shadow-sm hover:bg-nigma-teal-pale">
                 Read the case study<ArrowRight aria-hidden="true" className="size-3.5" />
               </Button>
             </Card>
@@ -170,12 +172,12 @@ function Contact() {
               <h3 className="font-heading text-sm font-semibold">Validation states</h3>
               <div className="mt-4">
                 <Label htmlFor="example-work-email" className={labelClass}>Work email</Label>
-                <Input id="example-work-email" aria-invalid="true" aria-describedby="email-error" value="ada@" readOnly className="mt-2 h-10 w-full rounded-lg border-2 border-destructive bg-white px-3 text-sm text-nigma-ink outline-none" />
+                <Input id="example-work-email" aria-invalid="true" aria-describedby="email-error" value={demoEmail} onChange={(event) => setDemoEmail(event.target.value)} className="mt-2 h-10 w-full rounded-lg border-2 border-destructive bg-white px-3 text-sm text-nigma-ink outline-none" />
                 <p id="email-error" className="mt-2 text-[11px] leading-4 font-medium text-destructive">Enter a valid email address</p>
               </div>
               <div className="mt-6">
                 <Label htmlFor="example-company" className={labelClass}>Company</Label>
-                <Input id="example-company" readOnly className={`${inputClass} mt-2 bg-white`} placeholder="Company name" />
+                <Input id="example-company" value={demoCompany} onChange={(event) => setDemoCompany(event.target.value)} className={`${inputClass} mt-2 bg-white`} placeholder="Company name" />
               </div>
             </Card>
           </div>
