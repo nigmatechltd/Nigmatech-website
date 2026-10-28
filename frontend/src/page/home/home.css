@@ -1479,11 +1479,11 @@ font-size: 17px;
     left: 0;
     padding: 7px 5px 7px 0;
     background: var(--muted);
-    font-size: 13px;
+    font-size: 14px;
   }
   .sector-chip {
     padding: 7px 10px;
-    font-size: 12px;
+    font-size: 14px;
   }
   .home-section {
     padding: 58px 0;

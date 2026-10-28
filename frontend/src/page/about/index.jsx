@@ -93,21 +93,21 @@ function About() {
             </div>
           </div>
           <div>
-            <p className="text-2xl font-bold text-nigma-teal-dark">Our story</p>
+            <p className="text-3xl font-bold text-nigma-teal-dark">Our story</p>
             <h2 className="mt-3 font-heading text-3xl font-semibold leading-tight tracking-tight sm:text-[40px]">
               Started with ERP. Grew into products.
             </h2>
-            <p className="mt-5 text-base leading-7 text-muted-foreground">
+            <p className="mt-5 text-[17px] leading-7 text-muted-foreground">
               We started by implementing ERPNext for businesses that needed systems their teams would actually use. Working closely with food businesses showed us a gap: cloud kitchens were running on spreadsheets, WhatsApp threads and separate payment dashboards.
             </p>
-            <p className="mt-4 text-base leading-7 text-muted-foreground">
+            <p className="mt-4 text-[17px] leading-7 text-muted-foreground">
               Nuvio is our answer: everything we learned turning Wunmax&apos;s operations into a product any kitchen can use. We still build bespoke software and implement ERP, with the same practical, long-term approach.
             </p>
           </div>
         </div>
 
         <div className="mx-auto mt-20 w-[min(1220px,calc(100%-40px))] sm:mt-28 sm:w-[min(1220px,calc(100%-64px))]">
-          <p className="text-xl font-bold text-nigma-teal-dark">Why Nigmatech</p>
+          <p className="text-3xl font-bold text-nigma-teal-dark">Why Nigmatech</p>
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-[40px]">How we work with clients</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {principles.map(({ Icon, title, copy }) => (
@@ -127,7 +127,7 @@ function About() {
 
       <section className="bg-[radial-gradient(ellipse_at_85%_25%,rgba(22,115,128,0.38),transparent_48%),linear-gradient(116deg,#050A0B,#0C1415_60%,#0C3337)] py-16 text-white sm:py-24">
         <div className="mx-auto w-[min(1220px,calc(100%-40px))] sm:w-[min(1220px,calc(100%-64px))]">
-          <p className="text-xl font-bold text-nigma-teal-light">What we do</p>
+          <p className="text-3xl font-bold text-nigma-teal-light">What we do</p>
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-[40px]">Products and services</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {products.map(({ Icon, title, copy, action, to }) => (
@@ -150,7 +150,7 @@ function About() {
 
       <section className="bg-[radial-gradient(ellipse_at_76%_18%,rgba(191,227,231,0.28),transparent_45%),#f3f6f5] py-16 sm:py-20">
         <div className="mx-auto w-[min(900px,calc(100%-40px))] sm:w-[min(900px,calc(100%-64px))]">
-          <p className="text-xl font-bold text-nigma-teal-dark">A few details</p>
+          <p className="text-3xl font-bold text-nigma-teal-dark">A few details</p>
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-[40px]">About Nigmatech</h2>
           <Accordion className="mt-7 rounded-2xl border border-white/80 bg-white/65 px-5 shadow-[0_14px_38px_rgba(5,10,11,0.06)] sm:px-7">
             {questions.map(([question, answer], index) => (
@@ -165,7 +165,7 @@ function About() {
 
       <section className="bg-[radial-gradient(ellipse_at_78%_20%,rgba(191,227,231,0.25),transparent_42%),#f3f6f5] py-16 sm:py-24">
         <div className="mx-auto w-[min(1220px,calc(100%-40px))] sm:w-[min(1220px,calc(100%-64px))]">
-          <p className="text-xl font-bold text-nigma-teal-dark">The team</p>
+          <p className="text-3xl font-bold text-nigma-teal-dark">The team</p>
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-[40px]">The people behind the software</h2>
           <p className="mt-3 max-w-2xl text-base leading-7 text-muted-foreground">Engineers, ERP consultants and product people based in Lagos.</p>
           <div className="mt-8 grid grid-cols-1 gap-x-4 gap-y-7 sm:grid-cols-4 sm:gap-5">
@@ -190,7 +190,7 @@ function About() {
           <Card className="mt-16 rounded-[1.5rem] border-0 bg-[radial-gradient(ellipse_at_80%_45%,rgba(22,115,128,0.48),transparent_58%),linear-gradient(116deg,#050A0B,#0C1415_58%,#0C3337)] px-6 py-12 text-center text-white sm:mt-20 sm:px-12 sm:py-16">
             <CardContent className="p-0">
             <h2 className="mx-auto max-w-xl font-heading text-3xl font-semibold tracking-tight sm:text-[40px]">Let&apos;s build something useful together</h2>
-            <p className="mx-auto mt-4 max-w-lg text-md leading-6 text-white/60 sm:text-base">Tell us what you&apos;re working on. We reply within one business day.</p>
+            <p className="mx-auto mt-4 max-w-lg text-md leading-6 text-white/60 sm:text-[17px]">Tell us what you&apos;re working on. We reply within one business day.</p>
             <Button render={<Link to="/contact" />} className="mt-7 h-auto min-h-13 gap-2 rounded-full bg-nigma-teal px-7 text-sm font-bold text-nigma-ink hover:bg-nigma-teal-light">
               Start a conversation<ArrowRight aria-hidden="true" className="size-4" />
             </Button>

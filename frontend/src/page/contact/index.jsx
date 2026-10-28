@@ -24,8 +24,8 @@ import { Textarea } from '../../components/ui/textarea'
 
 const interests = ['Nuvio', 'ERP', 'Custom software', 'Something else']
 
-const inputClass = 'mt-1.5 h-10 w-full rounded-lg border border-border bg-white px-3 text-sm text-nigma-ink placeholder:text-muted-foreground/70 outline-none transition focus:border-nigma-teal focus:ring-2 focus:ring-nigma-teal/20'
-const labelClass = 'block text-xs font-semibold text-nigma-ink'
+const inputClass = 'mt-1.5 h-10 w-full rounded-lg border border-border bg-white px-3 text-md text-nigma-ink placeholder:text-muted-foreground/70 outline-none transition focus:border-nigma-teal focus:ring-2 focus:ring-nigma-teal/20'
+const labelClass = 'block text-[16px] font-semibold text-nigma-ink'
 
 function Contact() {
   const [interest, setInterest] = useState('Nuvio')
@@ -51,13 +51,13 @@ function Contact() {
             <h1 className="mt-5 max-w-xl font-heading text-4xl font-semibold leading-[1.04] tracking-[-0.04em] sm:text-5xl lg:text-5xl">
               Let&apos;s talk about your business
             </h1>
-            <p className="mt-5 max-w-lg text-sm leading-6 text-white/60 sm:text-base sm:leading-7">
+            <p className="mt-5 max-w-lg text-[16px] leading-6 text-white/60 sm:text-base sm:leading-7">
               Tell us a little about what you need. We&apos;ll get back to you within one business day to book a call.
             </p>
 
             <div className="mt-6">
-              <p className="text-xs font-bold text-nigma-teal-light">What to expect</p>
-              <ul className="mt-3 space-y-2.5 text-sm text-white/75">
+              <p className="text-[22px] font-bold text-nigma-teal-light">What to expect</p>
+              <ul className="mt-3 space-y-2.5 text-[16px] text-white/75">
                 {[
                   'A 30-minute call with a product or ERP lead',
                   'A walkthrough using your menus or processes',
@@ -74,17 +74,17 @@ function Contact() {
             </div>
 
             <address className="mt-6 grid max-w-md gap-3 rounded-2xl border border-white/10 bg-white/[0.065] p-4 not-italic backdrop-blur-sm sm:p-5">
-              <a href="mailto:info@nigmatech.net" className="group flex items-center gap-3 text-sm text-white/85 hover:text-white">
+              <a href="mailto:info@nigmatech.net" className="group flex items-center gap-3 text-md text-white/85 hover:text-white">
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-nigma-teal-light/15 bg-nigma-teal/10 text-nigma-teal-light"><Mail aria-hidden="true" className="size-4" /></span>
-                <span className="flex flex-col gap-1"><span className="block text-[11px] leading-4 text-white/50">Email</span><span className="block leading-5">info@nigmatech.net</span></span>
+                <span className="flex flex-col gap-1"><span className="block text-[14px] leading-4 text-white/50">Email</span><span className="block leading-5">info@nigmatech.net</span></span>
               </a>
-              <div className="flex items-center gap-3 text-sm text-white/85">
+              <div className="flex items-center gap-3 text-md text-white/85">
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-nigma-teal-light/15 bg-nigma-teal/10 text-nigma-teal-light"><Phone aria-hidden="true" className="size-4" /></span>
-                <span className="flex flex-col gap-1"><span className="block text-[11px] leading-4 text-white/50">Phone / WhatsApp</span><span className="block leading-5">+234 [XXX XXX XXXX]</span></span>
+                <span className="flex flex-col gap-1"><span className="block text-[14px] leading-4 text-white/50">Phone / WhatsApp</span><span className="block leading-5">+234 [XXX XXX XXXX]</span></span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-white/85">
+              <div className="flex items-center gap-3 text-md text-white/85">
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-nigma-teal-light/15 bg-nigma-teal/10 text-nigma-teal-light"><MapPin aria-hidden="true" className="size-4" /></span>
-                <span className="flex flex-col gap-1"><span className="block text-[11px] leading-4 text-white/50">Office</span><span className="block leading-5">Lagos, Nigeria</span></span>
+                <span className="flex flex-col gap-1"><span className="block text-[14px] leading-4 text-white/50">Office</span><span className="block leading-5">Lagos, Nigeria</span></span>
               </div>
             </address>
           </div>
@@ -111,7 +111,7 @@ function Contact() {
               <legend className={labelClass}>I&apos;m interested in</legend>
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {interests.map((item) => (
-                  <Button key={item} variant="outline" className={`h-auto min-h-8 rounded-full px-3 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nigma-teal ${interest === item ? 'border-nigma-teal bg-nigma-teal-pale text-nigma-teal-dark' : 'border-transparent bg-muted text-muted-foreground hover:border-border hover:bg-muted hover:text-nigma-ink'}`} type="button" aria-pressed={interest === item} onClick={() => setInterest(item)}>
+                  <Button key={item} variant="outline" className={`h-auto min-h-8 rounded-full px-3 text-md font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nigma-teal ${interest === item ? 'border-nigma-teal bg-nigma-teal-pale text-nigma-teal-dark' : 'border-transparent bg-muted text-muted-foreground hover:border-border hover:bg-muted hover:text-nigma-ink'}`} type="button" aria-pressed={interest === item} onClick={() => setInterest(item)}>
                     {item}
                   </Button>
                 ))}
@@ -145,7 +145,7 @@ function Contact() {
                 Your details are ready. This form is not connected to a booking service yet, so your request has not been sent. Please email info@nigmatech.net to reach us.
               </p>
             ) : (
-              <p className="mt-3 text-[14px] leading-4 text-muted-foreground">We&apos;ll only use your details to reply to this enquiry.</p>
+              <p className="mt-3 text-[15px] leading-4 text-muted-foreground">We&apos;ll only use your details to reply to this enquiry.</p>
             )}
             </form>
           </Card>
@@ -154,16 +154,16 @@ function Contact() {
 
       <section className="bg-[radial-gradient(ellipse_at_72%_28%,rgba(191,227,231,0.32),transparent_44%),#f3f6f5] py-14 sm:py-16 lg:py-20">
         <div className="mx-auto w-[min(1220px,calc(100%-40px))] sm:w-[min(1220px,calc(100%-64px))]">
-          <p className="text-xl font-bold text-nigma-teal-dark">Form states</p>
+          <p className="text-3xl font-bold text-nigma-teal-dark">Form states</p>
           <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight sm:text-[38px]">Success and validation</h2>
-          <p className="mt-2 text-sm leading-6 text-muted-foreground sm:text-base">A clear confirmation and helpful feedback keep every enquiry easy to complete.</p>
+          <p className="mt-2 text-md leading-6 text-muted-foreground sm:text-base">A clear confirmation and helpful feedback keep every enquiry easy to complete.</p>
 
           <div className="mt-7 grid gap-4 sm:grid-cols-2">
             <Card role="article" className="gap-0 rounded-2xl border border-white/90 bg-white/55 p-5 ring-0 shadow-[0_14px_38px_rgba(5,10,11,0.07)] sm:p-7">
-              <span className="flex size-9 items-center justify-center rounded-full bg-nigma-teal-pale text-nigma-teal-dark"><CheckCircle2 aria-hidden="true" className="size-5" /></span>
-              <h3 className="mt-4 font-heading text-lg font-semibold">Thanks, we&apos;ve got it</h3>
-              <p className="mt-2 max-w-md text-[14px] leading-5 text-muted-foreground">Example confirmation shown after a connected form submission. In the meantime, see how Wunmax uses Nuvio.</p>
-              <Button render={<Link to="/case-study" />} className="mt-4 h-auto min-h-10 gap-2 rounded-full bg-white px-4 text-xs font-bold text-nigma-ink shadow-sm hover:bg-nigma-teal-pale">
+              <span className="flex size-12 items-center justify-center rounded-full bg-nigma-teal-pale text-nigma-teal-dark"><CheckCircle2 aria-hidden="true" className="size-5" /></span>
+              <h3 className="mt-4 font-heading text-[20px] font-semibold">Thanks, we&apos;ve got it</h3>
+              <p className="mt-2 max-w-[458px] text-[15px] leading-5 text-muted-foreground">Example confirmation shown after a connected form submission. In the meantime, see how Wunmax uses Nuvio.</p>
+              <Button render={<Link to="/case-study" />} className="mt-4 h-auto min-h-12 gap-2 rounded-full bg-white px-4 text-[15px] font-bold text-nigma-ink shadow-sm hover:bg-nigma-teal-pale">
                 Read the case study<ArrowRight aria-hidden="true" className="size-3.5" />
               </Button>
             </Card>
