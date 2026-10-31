@@ -36,9 +36,9 @@ const footerSections = [
 ]
 
 const socialItems = [
-  { label: 'LinkedIn', mark: 'in' },
-  { label: 'X', mark: 'X' },
-  { label: 'Facebook', mark: 'f' },
+  { label: 'LinkedIn', mark: 'in', href: 'https://www.linkedin.com/company/nigmatechltd' },
+  { label: 'X', mark: 'X', href: 'https://x.com/nigmatechltd' },
+  { label: 'Facebook', mark: 'f', href: 'https://www.facebook.com/nigmatechltd' },
 ]
 
 function FooterSection({ title, links }) {
@@ -64,10 +64,6 @@ function Footer() {
   return (
     <footer
       className="w-full text-white bg-gradient-to-r from-nigma-teal-dark via-nigma-dark to-nigma-dark"
-    //   style={{
-    //     background:
-    //       'radial-gradient(ellipse at 2% 42%, var(--nigma-teal-dark) 0%, var(--nigma-dark) 50%, var(--nigma-ink) 100%)',
-    //   }}
     >
       <div className="mx-auto grid max-w-360 grid-cols-1 gap-9 px-5 py-12 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 sm:px-8 lg:grid-cols-[minmax(0,1.7fr)_repeat(3,minmax(0,0.8fr))] lg:gap-12 lg:px-8 lg:py-16">
         <div className="flex flex-col items-start gap-4 sm:pr-4 lg:pr-12">
@@ -106,18 +102,19 @@ function Footer() {
             © {new Date().getFullYear()} Nigmatech Limited. All rights reserved.
           </p>
           <div aria-label="Social media" className="flex items-center gap-2">
-            {socialItems.map(({ label, mark }) => (
-              <span
+            {socialItems.map(({ label, mark, href }) => (
+              <a
                 key={label}
-                role="img"
-                aria-label={`${label} profile link not configured`}
-                title={`${label} profile link not configured`}
-                className="flex size-10 items-center cursor-pointer justify-center rounded-full border border-white/15 text-white/60"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} profile`}
+                className="flex size-10 items-center justify-center rounded-full border border-white/15 text-white/60 transition-colors hover:text-white"
               >
                 <span aria-hidden="true" className="text-[11px] font-semibold leading-none">
                   {mark}
                 </span>
-              </span>
+              </a>
             ))}
           </div>
         </div>

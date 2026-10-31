@@ -314,10 +314,10 @@ function Home() {
               Then we stay to support it.
             </p>
             <div className="home-actions">
-              <Button render={<Link to="/solution/nuvio" />} className="home-button home-button-primary h-auto">
+              <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
                 Book a demo <ArrowRight size={15} />
               </Button>
-              <Button render={<Link to="/contact" />} variant="outline" className="home-button home-button-outline h-auto">
+              <Button render={<Link to="/solution/nuvio" />} variant="outline" className="home-button home-button-outline h-auto">
                 Explore solutions
               </Button>
             </div>

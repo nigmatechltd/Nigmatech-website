@@ -230,6 +230,10 @@ function Nuvio() {
               Book a demo
             </Button>
           </nav>
+           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-md text-white/55 mb-10">
+                                    <Link className="transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-nigma-teal-light" to="/">Back</Link>
+                                    <span aria-hidden="true">&gt;</span><span className="text-white/80">Nuvio</span>
+                                  </nav>
           <div id="overview" className="nuvio-intro">
             <Badge variant="outline" className="h-auto gap-2 rounded-full border-white/15 bg-white/[0.06] px-4 py-2 text-md text-white/75">
               <span className="nuvio-dot" />

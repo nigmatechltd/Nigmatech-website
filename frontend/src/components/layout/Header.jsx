@@ -125,7 +125,7 @@ function Header() {
                   alt=""
                   className="size-9 rounded-lg bg-white object-cover p-0.5"
                 />
-                <span className="font-heading text-sm font-semibold">Nigmatech</span>
+                <span onClick={closeMobileNavigation} className="font-heading text-sm font-semibold">Nigmatech</span>
               </Link>
               <MobileNavigation.Close
                 aria-label="Close navigation"
@@ -137,7 +137,7 @@ function Header() {
 
             <nav aria-label="Mobile navigation" className="flex flex-col gap-7 py-6">
               <div className="flex flex-col gap-2">
-                <p className="px-1 text-xs font-semibold text-white/45">Solutions</p>
+                <p className="px-1 text-md font-semibold text-white/45">Solutions</p>
                 <Link
                   to="/solution/nuvio"
                   onClick={closeMobileNavigation}
