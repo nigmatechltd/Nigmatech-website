@@ -15,12 +15,16 @@ import {
   ChartColumnIncreasing,
   Check,
   Layers3,
+  LocationEdit,
   MessageCircle,
   Package,
+  Phone,
   Play,
+  Rocket,
   ShieldCheck,
   ShoppingBag,
   Store,
+  UsersRound,
   Utensils,
   Workflow,
   Zap,
@@ -28,143 +32,139 @@ import {
 import "./home.css";
 
 const sectors = [
-  "Food & hospitality",
-  "Retail & distribution",
-  "Professional services",
-  "Multi-location teams",
-  "Growing businesses",
+  "client logo",
+  "client logo",
+  "client logo",
+  "client logo",
+  "client logo",
+  "client logo",
 ];
 
 const solutions = [
   {
     id: "nuvio",
-    label: "01 / NUVIO",
-    title: "The operating system for cloud kitchens",
-    copy: "Bring orders, menus, payments, and kitchen workflows into one clear view.",
-    to: "/solution/nuvio",
-    action: "Explore Nuvio",
-    Icon: Utensils,
+    label: "ERP Software",
+    title: "ERP implimented properly for your business",
+    copy: "Finance, inventory, manufacturing, projects, HR and CRM in one system, set up around how you actually work and supported after go-live",
+    to: "/solution/erp-software",
+    action: "Explore ERP Software",
+    Icon: Layers3,
   },
   {
     id: "erp",
-    label: "02 / ERP SOFTWARE",
-    title: "ERP that fits the way your business works",
-    copy: "Connect the everyday work behind your people, processes, and decisions.",
-    to: "/solution/erp-software",
-    action: "Explore ERP software",
-    Icon: Layers3,
+    label: "Custom software",
+    title: "Built around your process, when nothing off the sheft fits",
+    copy: "Business applications, workflow automation and integrations that connect your ERP, payment gatways and messaging, then supported for the long term",
+    to: "/contact",
+    action: "Discuss your project",
+    Icon: Phone,
   },
 ];
 
 const capabilities = [
   {
     Icon: Workflow,
-    title: "Systems that work together",
-    copy: "Connect the tools and processes your team already depends on.",
+    title: "Business-first",
+    copy: "We start from your operations and margins, not from a feature list",
   },
   {
-    Icon: ShieldCheck,
-    title: "Built for real operations",
-    copy: "Practical software shaped around how work happens day to day.",
+    Icon: Rocket,
+    title: "Practical delivery",
+    copy: "Working software in weeks, shown to you in regular demo.",
   },
   {
-    Icon: Zap,
-    title: "Less friction, more flow",
-    copy: "Make the next step easier to see and simpler to complete.",
-  },
-  {
-    Icon: MessageCircle,
-    title: "A team beside you",
-    copy: "Get implementation and ongoing support from people who know the system.",
+    Icon: LocationEdit,
+    title: "Built for here",
+    copy: "Local payment gateways. whatsApp and local tax rules are already built in",
   },
 ];
 
-const industries = [
-  {
-    Icon: Utensils,
-    title: "Food & hospitality",
-    copy: "Orders, kitchens, and service.",
-  },
-  { Icon: Store, title: "Retail", copy: "Stock, sales, and daily operations." },
-  {
-    Icon: Package,
-    title: "Distribution",
-    copy: "Inventory and connected workflows.",
-  },
-  {
-    Icon: Building2,
-    title: "Professional services",
-    copy: "People, projects, and delivery.",
-  },
-  {
-    Icon: ShoppingBag,
-    title: "Multi-branch teams",
-    copy: "A clearer view across locations.",
-  },
-  {
-    Icon: ChartColumnIncreasing,
-    title: "Growing businesses",
-    copy: "Systems ready for what comes next.",
-  },
-];
+// const industries = [
+//   {
+//     Icon: Utensils,
+//     title: "Food & hospitality",
+//     copy: "Orders, kitchens, and service.",
+//   },
+//   { Icon: Store, title: "Retail", copy: "Stock, sales, and daily operations." },
+//   {
+//     Icon: Package,
+//     title: "Distribution",
+//     copy: "Inventory and connected workflows.",
+//   },
+//   {
+//     Icon: Building2,
+//     title: "Professional services",
+//     copy: "People, projects, and delivery.",
+//   },
+//   {
+//     Icon: ShoppingBag,
+//     title: "Multi-branch teams",
+//     copy: "A clearer view across locations.",
+//   },
+//   {
+//     Icon: ChartColumnIncreasing,
+//     title: "Growing businesses",
+//     copy: "Systems ready for what comes next.",
+//   },
+// ];
 
-const services = [
-  {
-    Icon: ChartColumnIncreasing,
-    title: "Product strategy",
-    copy: "Find the right problem and define a useful solution.",
-  },
-  {
-    Icon: Workflow,
-    title: "Systems integration",
-    copy: "Bring disconnected tools into a clearer flow.",
-  },
-  {
-    Icon: Layers3,
-    title: "Custom software",
-    copy: "Build software around your operating needs.",
-  },
-  {
-    Icon: ShieldCheck,
-    title: "Ongoing support",
-    copy: "Keep your tools useful as the business changes.",
-  },
-];
+// const services = [
+//   {
+//     Icon: ChartColumnIncreasing,
+//     title: "Product strategy",
+//     copy: "Find the right problem and define a useful solution.",
+//   },
+//   {
+//     Icon: Workflow,
+//     title: "Systems integration",
+//     copy: "Bring disconnected tools into a clearer flow.",
+//   },
+//   {
+//     Icon: Layers3,
+//     title: "Custom software",
+//     copy: "Build software around your operating needs.",
+//   },
+//   {
+//     Icon: ShieldCheck,
+//     title: "Ongoing support",
+//     copy: "Keep your tools useful as the business changes.",
+//   },
+// ];
 
 const steps = [
   {
     number: "01",
     title: "Discover",
-    copy: "We learn how your team works and where the friction lives.",
+    copy: "We learn how your business really runs: the people, processes, data and limits.",
   },
   {
     number: "02",
     title: "Design",
-    copy: "We shape a clear plan around your people and priorities.",
+    copy: "We agree the scope, workflows and succes measures with you before building anything.",
   },
   {
     number: "03",
-    title: "Build",
-    copy: "We configure, connect, and test the system with your team.",
+    title: "Impliment",
+    copy: "We build and configure in short cycles with regular demos so there are no surprises.",
   },
   {
     number: "04",
-    title: "Go live",
-    copy: "We support the handover and keep improving from there.",
+    title: "improve",
+    copy: "After go-live we stay on to support your team, tune the system and also what you need next.",
   },
 ];
 
 const principles = [
   {
-    title: "Clarity",
+    title: "Name",
     copy: "A shared view of what is happening and what needs attention.",
   },
   {
-    title: "Continuity",
+    title: "Name",
     copy: "Work moves cleanly from one person, tool, or team to the next.",
   },
   {
-    title: "Control",
+    title: "Name",
     copy: "The right information is close when a decision needs to be made.",
   },
 ];
@@ -271,35 +271,6 @@ function DashboardPreview() {
   );
 }
 
-function PhonePreview() {
-  return (
-    <div
-      className="order-phone"
-      role="img"
-      aria-label="Illustrative WhatsApp order conversation for Wunmax Kitchen"
-    >
-      <div className="phone-screen">
-        <div className="phone-contact">
-          <span><Utensils size={14} /></span>
-          <b>Wunmax Kitchen<small>WhatsApp · ordering assistant</small></b>
-        </div>
-        <p className="chat-bubble chat-in">
-          Hi! Jollof rice with chicken and 1 small chops pack. Deliver to Lekki Phase 1 pls
-          <small>12:01</small>
-        </p>
-        <p className="chat-bubble chat-out">
-          2 × Jollof rice + chicken, 1 Small chops ₦18,500. Reply CONFIRM to place your order.
-          <small>12:01</small>
-        </p>
-        <div className="chat-confirm">CONFIRM <small>12:02</small></div>
-        <div className="phone-input">
-          <span>Message</span>
-          <b aria-hidden="true">➤</b>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function Home() {
   return (
@@ -310,15 +281,16 @@ function Home() {
             <Badge variant="outline" className="hero-badge h-auto">Nigmatech. Lagos, Nigeria</Badge>
             <h1>Software that keeps your business moving.</h1>
             <p className="build">
-              We build Novia, the all-in-one platform for cloud kitchens and Impliment ERP software businesses actually use.
+              We impliment ERP software that growing businesses actually use, and build custom software when 
+              nothing off the shelf fits
               Then we stay to support it.
             </p>
             <div className="home-actions">
               <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
-                Book a demo <ArrowRight size={15} />
+                Book a consolution <ArrowRight size={15} />
               </Button>
               <Button render={<Link to="/solution/nuvio" />} variant="outline" className="home-button home-button-outline h-auto">
-                Explore solutions
+                Explore ERP software
               </Button>
             </div>
             <div className='hero-prove-container'>
@@ -326,7 +298,7 @@ function Home() {
               <span>
                 <Check size={12} />
               </span>
-              <p>Build for your production</p>
+              <p>Build for your operations</p>
             </div>
             <div className="hero-proof">
               <span>
@@ -344,14 +316,14 @@ function Home() {
           </div>
           <div className="hero-art">
             <DashboardPreview />
-            <PhonePreview />
+            
           </div>
         </div>
         <div className="hero-rule" />
       </section>
 
       <section className="sector-strip" aria-label="Industries served">
-        <span className="sector-intro">Trusted by kitchen, manufacturers, builder and distributor</span>
+        <span className="sector-intro">Trusted by manufacturers, builders, distributors and service businesses</span>
         <div className="home-container sector-row">
           
           {sectors.map((item) => (
@@ -371,9 +343,8 @@ function Home() {
               supports the systems businesses run on.
             </h2>
             <p>
-              Good software should make work clearer, not add another layer to
-              it. We bring product thinking, implementation, and ongoing support
-              together so the tools fit the way your team operates.
+              Our ERP consultants and engineers work directly with your tem: ERP specialists for implimentation,
+              and  builders for anything custom. We measure success by whether your team uses what we deliver.
             </p>
             <Link className="home-text-link" to="/about">
               More about Nigmatech <ArrowRight size={14} />
@@ -381,24 +352,24 @@ function Home() {
           </div>
           <div className="fact-grid">
             <Card role="article" className="gap-0 p-0 ring-0">
-              <b>2</b>
-              <strong>focused software solutions</strong>
-              <small>Nuvio + ERP software</small>
+              <b>[XX]+</b>
+              <strong></strong>
+              <small>businesses running on systems we built or implimented</small>
             </Card>
             <Card role="article" className="gap-0 p-0 ring-0">
-              <b>One</b>
-              <strong>team from planning to support</strong>
-              <small>Built around your workflow</small>
+              <b>5</b>
+              
+              <small>Industries with live ERP projects</small>
             </Card>
             <Card role="article" className="gap-0 p-0 ring-0">
-              <b>Lagos</b>
-              <strong>local context, practical delivery</strong>
-              <small>Made for business here</small>
+              <b>[X]</b>
+              
+              <small>Contries with live deployments</small>
             </Card>
              <Card role="article" className="gap-0 p-0 ring-0">
-              <b>24/7</b>
-              <strong>local context, practical delivery</strong>
-              <small>Made for business here</small>
+              <b>[XX]</b>
+              
+              <small>years implimenting ERPNext</small>
             </Card>
           </div>
         </div>
@@ -408,8 +379,9 @@ function Home() {
         <div className="home-container">
           <div className="section-heading heading-row">
             <div>
-              <span className="copy">Solution</span>
-              <h2>Two solutions, one team behind both</h2>
+              <h2>ERP for the whole business, and software for the gaps</h2>
+              <p className="">you work directly with the people who impliment, build and support your systems</p>
+              
             </div>
           </div>
           <div className="solution-grid">
@@ -432,9 +404,10 @@ function Home() {
                   </div>
                   <span>
                     {id === "nuvio" ? (
-                      <Utensils size={30} />
+                     
+                     <Layers3 size={30} /> 
                     ) : (
-                      <Layers3 size={30} />
+                      <Utensils size={30} />
                     )}
                   </span>
                   <small>
@@ -456,10 +429,9 @@ function Home() {
       <section className="capability-band">
         <div className="home-container">
           <div className="section-heading heading-row dark-heading">
-            <div>
-              <span className="copy">Why Nigmatech</span>
-              <h2>Practical software, built for how business works here.</h2>
-            </div>
+              
+              <h2>We impliment it, we build what's missing , and we stay to support it.</h2>
+
           </div>
           <div className="capability-grid">
             {capabilities.map(({ Icon, title, copy }, i) => (
@@ -472,88 +444,18 @@ function Home() {
               </Card>
             ))}
           </div>
-          <div className="capability-stats">
-            <div>
-              <b>5</b>
-              <span>connected solutions connected solutions connected solutions</span>
-            </div>
-            <div>
-              <b>6</b>
-              <span>delivery team</span>
-            </div>
-            <div>
-              <b>2</b>
-              <span>implementation and support connected solutions connected solutions</span>
-            </div>
-            <div>
-              <b>6 hours</b>
-              <span>care beyond go-live connected solutions connected solutions</span>
-            </div>
-          </div>
+         
         </div>
       </section>
-
-      <section className="home-section industries-section">
-        <div className="home-container">
-          <div className="section-heading">
-            <span className="copy">Industry</span>
-            <h2>Built for teams doing the everyday work</h2>
-          </div>
-          <div className="industry-grid">
-            {industries.map(({ Icon, title, copy }) => (
-              <Card role="article" className="gap-0 ring-0 industry-card" key={title}>
-                <span className="industry-icon">
-                  <Icon size={25} />
-                </span>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-                <ArrowUpRight size={30} />
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="home-section custom-section">
-        <div className="home-container custom-grid">
-          <div className="section-copy">
-            <span className="copy">custom Software</span>
-            <h2>
-              Need Something built just for you?
-            </h2>
-            <p>
-              When neither solution fits, we design and build software around your process connect
-              it to the system you already use.
-            </p>
-            <Button render={<Link to="/contact" />} className="home-button home-button-dark h-auto">
-              Discuss your project <ArrowRight size={15} />
-            </Button>
-          </div>
-          <div className="service-grid">
-            {services.map(({ Icon, title, copy }) => (
-              <Card role="article" className="gap-0 ring-0 service-card" key={title}>
-                <span>
-                  <Icon size={26} />
-                </span>
-                <ArrowUpRight size={14} />
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="home-section process-section">
         <div className="home-container">
           <div className="section-heading heading-row">
             <div className="section-heading">
-              <span className="eye">OUR APPROACH</span>
+              
               <h2>A clear path from first call to go-live, and beyond</h2>
             </div>
             <p>
-              Stay close to the work at every step, with clear decisions and no
-              mystery handoffs.
+              The same four stages on every project, so you always know what happens next.
             </p>
           </div>
           <div className="process-grid">
@@ -574,12 +476,8 @@ function Home() {
       <section className="home-section principles-section">
         <div className="home-container">
           <div className="section-heading">
-            <span className="eye">WHAT GOOD SYSTEMS MAKE POSSIBLE</span>
+            
             <h2>Trusted by the teams who use it every day</h2>
-            <p>
-              Useful software gives people more clarity, continuity, and room to
-              focus on customers.
-            </p>
           </div>
           <div className="principle-grid">
             {principles.map(({ title, copy }, i) => (
@@ -591,18 +489,19 @@ function Home() {
                 <p>{copy}</p>
                 <footer>
                   <i>
-                    <Check size={25} />
+                    <UsersRound size={17} />
                   </i>
                   <span>
                     <b>{title}</b>
-                    <small>What good systems deliver</small>
+                    <small>[Title][Manufacturing client]</small>
                   </span>
                 </footer>
                 <strong>0{i + 1}</strong>
               </Card>
             ))}
           </div>
-          <Card role="article" className="gap-0 ring-0 story-card">
+          
+          <Card role="article" className="gap-0 ring-0 story-card lg:mt-0 mt-20 border">
             <div className="story-visual">
               <div className="story-window">
                 <div>
@@ -623,12 +522,10 @@ function Home() {
               </div>
             </div>
             <div className="story-copy">
-              <span className="eye">PRODUCT SPOTLIGHT</span>
-              <h3>How Nuvio brings food channels together in one place</h3>
+              <span className="eye">Featuring project - Manufacturing</span>
+              <h3>Estimates in munites, not days</h3>
               <p>
-                Orders, kitchen activity, and customer updates can move as one
-                connected workflow, giving the team a clearer view through the
-                day.
+                A custom estimating module that prices cabinets from carcass, door, drawer, hardware, material and finish lookup tables, then turns approved estimates into ESP itmes and orders.
               </p>
               <Link className="home-text-link" to="/solution/nuvio">
                 See how Nuvio works <ArrowRight size={14} />
@@ -641,14 +538,15 @@ function Home() {
 
       <section className="home-section faq-section">
         <div className="home-container faq-grid">
-          <div className="section-copy">
+          {/* <div className="section-copy">
             <span className="eye">GOOD QUESTIONS</span>
-            <h2>Questions, answered</h2>
+            
             <p>A few useful things to know about working with Nigmatech.</p>
             <Link className="home-text-link" to="/contact">
               Ask us something else <ArrowRight size={14} />
             </Link>
-          </div>
+          </div> */}
+          <h2>Questions, answered</h2>
           <Accordion className="faq-list" defaultValue={["home-faq-0"]}>
             {faqs.map(({ q, a }, i) => (
               <AccordionItem key={q} value={`home-faq-${i}`} className="rounded-[10px] border border-black/[.07] bg-white/[.76] shadow-[0_6px_18px_rgba(5,10,11,.03)]">
@@ -668,17 +566,16 @@ function Home() {
         <div className="home-container">
           <div className="home-cta">
             
-            <h2>Ready to see it in action?</h2>
+            <h2>Let's map your processes</h2>
             <p>
-              Tell us what your team needs. We&apos;ll help you find the right
-              next step.
+              book a 30-minute call. We'll walk though your ERP or custom software needs and give you a clear next step.
             </p>
             <div className="home-actions">
             <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
-                Book a demo <ArrowRight size={15} />
+                Book a consultant <ArrowRight size={15} />
             </Button>
             <Button render={<Link to="/contact" />} variant="outline" className="home-button home-button-outline h-auto">
-                Talk to us <ArrowUpRight size={15} />
+                Contact us
             </Button>
             </div>
           </div>

@@ -18,7 +18,7 @@ function App() {
       
       </Route>
         <Route path="/solution/erp-software" element={<ERPSoftware />} />
-        <Route path="/solution/nuvio" element={<Nuvio />} />
+        {/* <Route path="/solution/nuvio" element={<Nuvio />} /> */}
     </Routes>
   )
 }

@@ -28,7 +28,7 @@ const footerSections = [
     title: 'Resources',
     links: [
       { label: 'Help center' },
-      { label: 'Book a demo', to: '/contact' },
+      { label: 'Book a consolution', to: '/contact' },
       { label: 'Privacy policy' },
       { label: 'Terms of service' },
     ],

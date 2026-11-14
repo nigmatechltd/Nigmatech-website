@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu'
 import { Dialog as MobileNavigation } from '@base-ui/react/dialog'
-import logo from '../../assets/Nigmatech_logo.jpeg'
+import logo from '../../assets/Original Logo Symbol.png'
 
 const navLinkClass =
   'rounded-full px-4 py-2 text-md font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nigma-teal'
@@ -45,20 +45,7 @@ function Header() {
               align="start"
               className="w-72 rounded-2xl border border-white/10 bg-[#0b1718] p-2 text-white shadow-2xl shadow-black/30"
             >
-              <DropdownMenuItem
-                render={<Link to="/solution/nuvio" />}
-                className="flex items-start gap-3 rounded-xl p-3 text-white/80 focus:bg-white/10 focus:text-white hover:text-white cursor-pointer"
-              >
-                <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white/75 transition-colors group-hover/dropdown-menu-item:bg-nigma-teal/15 group-hover/dropdown-menu-item:text-nigma-teal-light">
-                  <Utensils aria-hidden="true" className="size-5" />
-                </span>
-                <span className="flex flex-col gap-1">
-                  <span className="font-medium text-white group-hover/dropdown-menu-item:text-white">01 Nuvio</span>
-                  <span className="text-sm leading-relaxed text-white/55 group-hover/dropdown-menu-item:text-white/55">
-                     Cloud kitchen ordering and operations
-                  </span>
-                </span>
-              </DropdownMenuItem>
+             
               <DropdownMenuItem
                 render={<Link to="/solution/erp-software" />}
                 className="flex items-start gap-3 rounded-xl p-3 text-white/80 focus:bg-white/10 focus:text-white hover:text-white cursor-pointer"
@@ -88,16 +75,10 @@ function Header() {
 
         <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <Link
-            to="/solution/nuvio"
-            className="rounded-full px-3 py-2 text-md font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nigma-teal"
-          >
-            Nuvio Login
-          </Link>
-          <Link
             to="/contact"
             className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#10565c]/90 text-white px-4 text-md font-semibold text-nigma-ink transition-colors border border-white/10 hover:bg-[#10565c]/90 focus-visible:outline-10 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
-            Book a demo
+            Book a consolution
           </Link>
         </div>
 
@@ -138,19 +119,7 @@ function Header() {
             <nav aria-label="Mobile navigation" className="flex flex-col gap-7 py-6">
               <div className="flex flex-col gap-2">
                 <p className="px-1 text-md font-semibold text-white/45">Solutions</p>
-                <Link
-                  to="/solution/nuvio"
-                  onClick={closeMobileNavigation}
-                  className="flex min-h-12 items-center justify-between rounded-xl bg-white/[0.06] px-3 text-md font-medium text-white transition-colors hover:bg-white/10"
-                >
-                  <span className="flex items-center gap-3 text-md">
-                    <span className="flex size-9 items-center justify-center rounded-lg bg-nigma-teal/15 text-nigma-teal-light">
-                      <Utensils aria-hidden="true" className="size-4" />
-                    </span>
-                    Nuvio
-                  </span>
-                  <ArrowUpRight aria-hidden="true" className="size-4 text-white/45" />
-                </Link>
+               
                 <Link
                   to="/solution/erp-software"
                   onClick={closeMobileNavigation}
@@ -200,16 +169,10 @@ function Header() {
                 onClick={closeMobileNavigation}
                 className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-nigma-teal px-4 text-md font-semibold text-nigma-ink transition-colors hover:bg-nigma-teal-light"
               >
-                Book a demo
+                Book a consolution
                 <ArrowUpRight aria-hidden="true" className="size-4" />
               </Link>
-              <Link
-                to="/solution/nuvio"
-                onClick={closeMobileNavigation}
-                className="flex min-h-11 items-center justify-center rounded-full border border-white/15 px-4 text-md font-medium text-white/80 transition-colors hover:bg-white/[0.06] hover:text-white"
-              >
-                Explore Nuvio
-              </Link>
+              
             </div>
             </MobileNavigation.Popup>
           </MobileNavigation.Portal>
