@@ -79,57 +79,6 @@ const capabilities = [
   },
 ];
 
-// const industries = [
-//   {
-//     Icon: Utensils,
-//     title: "Food & hospitality",
-//     copy: "Orders, kitchens, and service.",
-//   },
-//   { Icon: Store, title: "Retail", copy: "Stock, sales, and daily operations." },
-//   {
-//     Icon: Package,
-//     title: "Distribution",
-//     copy: "Inventory and connected workflows.",
-//   },
-//   {
-//     Icon: Building2,
-//     title: "Professional services",
-//     copy: "People, projects, and delivery.",
-//   },
-//   {
-//     Icon: ShoppingBag,
-//     title: "Multi-branch teams",
-//     copy: "A clearer view across locations.",
-//   },
-//   {
-//     Icon: ChartColumnIncreasing,
-//     title: "Growing businesses",
-//     copy: "Systems ready for what comes next.",
-//   },
-// ];
-
-// const services = [
-//   {
-//     Icon: ChartColumnIncreasing,
-//     title: "Product strategy",
-//     copy: "Find the right problem and define a useful solution.",
-//   },
-//   {
-//     Icon: Workflow,
-//     title: "Systems integration",
-//     copy: "Bring disconnected tools into a clearer flow.",
-//   },
-//   {
-//     Icon: Layers3,
-//     title: "Custom software",
-//     copy: "Build software around your operating needs.",
-//   },
-//   {
-//     Icon: ShieldCheck,
-//     title: "Ongoing support",
-//     copy: "Keep your tools useful as the business changes.",
-//   },
-// ];
 
 const steps = [
   {
@@ -188,13 +137,7 @@ const faqs = [
   },
 ];
 
-// function Eyebrow({ children, light = false }) {
-//   return (
-//     <Badge variant="ghost" className={`home-eyebrow text-4xl h-auto rounded-none border-0 bg-transparent px-0 py-0 text-inherit${light ? " home-eyebrow-light" : ""}`}>
-//       {children}
-//     </Badge>
-//   );
-// }
+
 
 function DashboardPreview() {
   const income = [35, 52, 42, 68, 55, 88, 62, 74, 48, 93, 65, 78];
@@ -289,7 +232,7 @@ function Home() {
               <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
                 Book a consolution <ArrowRight size={15} />
               </Button>
-              <Button render={<Link to="/solution/nuvio" />} variant="outline" className="home-button home-button-outline h-auto">
+              <Button render={<Link to="/solution/erp-software" />} variant="outline" className="home-button home-button-outline h-auto">
                 Explore ERP software
               </Button>
             </div>

@@ -9,10 +9,11 @@ const footerSections = [
   {
     title: 'Solutions',
     links: [
-      { label: 'Nuvio pricing', to: '/solution/nuvio' },
-      { label: 'Nuvio', to: '/solution/nuvio' },
+      // { label: 'Nuvio pricing', to: '/solution/nuvio' },
+      
       { label: 'ERP Software', to: '/solution/erp-software' },
       { label: 'Custom software', to: '/contact' },
+      { label: 'Sportlight projects', to: '/solution/sportlight' },
     ],
   },
   {
@@ -20,7 +21,7 @@ const footerSections = [
     links: [
       { label: 'About us', to: '/about' },
       { label: 'Case studies', to: '/case-study' },
-      { label: 'Careers' },
+      { label: 'Careers', to: '/careers' },
       { label: 'Contact', to: '/contact' },
     ],
   },
@@ -38,7 +39,7 @@ const footerSections = [
 const socialItems = [
   { label: 'LinkedIn', mark: 'in', href: 'https://www.linkedin.com/company/nigmatechltd' },
   { label: 'X', mark: 'X', href: 'https://x.com/nigmatechltd' },
-  { label: 'Facebook', mark: 'f', href: 'https://www.facebook.com/nigmatechltd' },
+  { label: 'Instagram', mark: 'Ig', href: 'https://www.instagram.com/nigmatechlimited?bqrl=dTF5d3I0cWxNjdt' },
 ]
 
 function FooterSection({ title, links }) {
