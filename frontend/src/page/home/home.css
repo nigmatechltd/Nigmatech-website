@@ -677,7 +677,7 @@ font-size: 17px;
 .fact-grid small {
   margin-top: 5px;
   color: var(--muted-foreground);
-  font-size: 13px;
+  font-size: 17px;
 }
 .fact-grid .fact-wide {
   min-height: 106px;
@@ -744,7 +744,7 @@ font-size: 17px;
 }
 .solution-meta small {
   color: var(--muted-foreground);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -770,7 +770,7 @@ font-size: 17px;
   max-width: 420px;
   margin: 9px 0 0;
   color: var(--muted-foreground);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.65;
 }
 .solution-nuvio > p {
@@ -1102,7 +1102,7 @@ font-size: 17px;
   border-radius: 999px;
   background: var(--nigma-teal-pale);
   color: var(--nigma-teal-dark);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 650;
 }
 .principle-card > p {
@@ -1542,7 +1542,7 @@ font-size: 17px;
     font-size: 18px;
   }
   .fact-grid small {
-    font-size: 17px;
+    font-size: 18px;
   }
   .solutions-section,
   .principles-section {

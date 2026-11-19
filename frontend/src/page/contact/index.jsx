@@ -126,7 +126,7 @@ function Contact() {
                   <span className="block text-[14px] leading-4 text-white/50">
                     Phone / WhatsApp
                   </span>
-                  <span className="block leading-5">+234 [XXX XXX XXXX]</span>
+                  <span className="block leading-5">+234 906 802 2673</span>
                 </span>
               </div>
               <div className="flex items-center gap-3 text-md text-white/85">

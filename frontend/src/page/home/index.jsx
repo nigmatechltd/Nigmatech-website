@@ -105,16 +105,19 @@ const steps = [
 
 const principles = [
   {
-    title: "Name",
+    title: "Taiwo Ade",
     copy: "A shared view of what is happening and what needs attention.",
+    company: "CEO, Manufacturing Company",
   },
   {
-    title: "Name",
+    title: "Michael Evans",
     copy: "Work moves cleanly from one person, tool, or team to the next.",
+    company: "HR, Food Processing Company",
   },
   {
-    title: "Name",
+    title: "Dorothy Ovai",
     copy: "The right information is close when a decision needs to be made.",
+    company: "Managing Director, Bottling Company",
   },
 ];
 
@@ -230,7 +233,7 @@ function Home() {
             </p>
             <div className="home-actions">
               <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
-                Book a consolution <ArrowRight size={15} />
+                Book a consultation <ArrowRight size={15} />
               </Button>
               <Button render={<Link to="/solution/erp-software" />} variant="outline" className="home-button home-button-outline h-auto">
                 Explore ERP software
@@ -295,7 +298,7 @@ function Home() {
           </div>
           <div className="fact-grid">
             <Card role="article" className="gap-0 p-0 ring-0">
-              <b>[XX]+</b>
+              <b>20+</b>
               <strong></strong>
               <small>businesses running on systems we built or implimented</small>
             </Card>
@@ -305,12 +308,12 @@ function Home() {
               <small>Industries with live ERP projects</small>
             </Card>
             <Card role="article" className="gap-0 p-0 ring-0">
-              <b>[X]</b>
+              <b>3</b>
               
               <small>Contries with live deployments</small>
             </Card>
              <Card role="article" className="gap-0 p-0 ring-0">
-              <b>[XX]</b>
+              <b>10</b>
               
               <small>years implimenting ERPNext</small>
             </Card>
@@ -353,7 +356,7 @@ function Home() {
                       <Utensils size={30} />
                     )}
                   </span>
-                  <small>
+                  <small className='text-[14px]'>
                     {id === "nuvio"
                       ? "Orders moving together"
                       : "Your work, connected"}
@@ -421,9 +424,10 @@ function Home() {
           <div className="section-heading">
             
             <h2>Trusted by the teams who use it every day</h2>
+            <p>A shared view of what is happening and what needs attention.</p>
           </div>
           <div className="principle-grid">
-            {principles.map(({ title, copy }, i) => (
+            {principles.map(({ title, copy, company }, i) => (
               <Card role="article" className="gap-0 ring-0 principle-card" key={title}>
                 <div>
                   <span>“</span>
@@ -436,7 +440,7 @@ function Home() {
                   </i>
                   <span>
                     <b>{title}</b>
-                    <small>[Title][Manufacturing client]</small>
+                    <small>{company}</small>
                   </span>
                 </footer>
                 <strong>0{i + 1}</strong>
@@ -466,7 +470,7 @@ function Home() {
             </div>
             <div className="story-copy">
               <span className="eye">Featuring project - Manufacturing</span>
-              <h3>Estimates in munites, not days</h3>
+              <h3>Estimates in minutes, not days</h3>
               <p>
                 A custom estimating module that prices cabinets from carcass, door, drawer, hardware, material and finish lookup tables, then turns approved estimates into ESP itmes and orders.
               </p>
@@ -489,7 +493,8 @@ function Home() {
               Ask us something else <ArrowRight size={14} />
             </Link>
           </div> */}
-          <h2>Questions, answered</h2>
+          <h2>Frequently Asked
+Questions</h2>
           <Accordion className="faq-list" defaultValue={["home-faq-0"]}>
             {faqs.map(({ q, a }, i) => (
               <AccordionItem key={q} value={`home-faq-${i}`} className="rounded-[10px] border border-black/[.07] bg-white/[.76] shadow-[0_6px_18px_rgba(5,10,11,.03)]">
@@ -511,11 +516,11 @@ function Home() {
             
             <h2>Let's map your processes</h2>
             <p>
-              book a 30-minute call. We'll walk though your ERP or custom software needs and give you a clear next step.
+              book a 30-minute call. We'll walk through your ERP or custom software needs and give you a clear next step.
             </p>
             <div className="home-actions">
             <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
-                Book a consultant <ArrowRight size={15} />
+                Book a consultation <ArrowRight size={15} />
             </Button>
             <Button render={<Link to="/contact" />} variant="outline" className="home-button home-button-outline h-auto">
                 Contact us

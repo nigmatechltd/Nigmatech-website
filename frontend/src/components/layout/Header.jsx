@@ -78,7 +78,7 @@ function Header() {
             to="/contact"
             className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#10565c]/90 text-white px-4 text-md font-semibold text-nigma-ink transition-colors border border-white/10 hover:bg-[#10565c]/90 focus-visible:outline-10 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
-            Book a consolution
+            Book a consultation
           </Link>
         </div>
 

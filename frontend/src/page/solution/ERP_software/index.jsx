@@ -787,7 +787,7 @@ function ERPSoftware() {
                   </p>
                   <div className="home-actions">
                   <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
-                      Book a consultant <ArrowRight size={15} />
+                      Book a consultation <ArrowRight size={15} />
                   </Button>
                   <Button render={<Link to="/contact" />} variant="outline" className="home-button home-button-outline h-auto">
                       Contact us
