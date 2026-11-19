@@ -9,10 +9,11 @@ const footerSections = [
   {
     title: 'Solutions',
     links: [
-      { label: 'Nuvio pricing', to: '/solution/nuvio' },
-      { label: 'Nuvio', to: '/solution/nuvio' },
+      // { label: 'Nuvio pricing', to: '/solution/nuvio' },
+      
       { label: 'ERP Software', to: '/solution/erp-software' },
       { label: 'Custom software', to: '/contact' },
+      { label: 'Sportlight projects', to: '/solution/sportlight' },
     ],
   },
   {
@@ -20,7 +21,7 @@ const footerSections = [
     links: [
       { label: 'About us', to: '/about' },
       { label: 'Case studies', to: '/case-study' },
-      { label: 'Careers' },
+      { label: 'Careers', to: '/careers' },
       { label: 'Contact', to: '/contact' },
     ],
   },
@@ -28,7 +29,7 @@ const footerSections = [
     title: 'Resources',
     links: [
       { label: 'Help center' },
-      { label: 'Book a demo', to: '/contact' },
+      { label: 'Book a consolution', to: '/contact' },
       { label: 'Privacy policy' },
       { label: 'Terms of service' },
     ],
@@ -36,9 +37,9 @@ const footerSections = [
 ]
 
 const socialItems = [
-  { label: 'LinkedIn', mark: 'in' },
-  { label: 'X', mark: 'X' },
-  { label: 'Facebook', mark: 'f' },
+  { label: 'LinkedIn', mark: 'in', href: 'https://www.linkedin.com/company/nigmatechltd' },
+  { label: 'X', mark: 'X', href: 'https://x.com/nigmatechltd' },
+  { label: 'Instagram', mark: 'Ig', href: 'https://www.instagram.com/nigmatechlimited?bqrl=dTF5d3I0cWxNjdt' },
 ]
 
 function FooterSection({ title, links }) {
@@ -64,10 +65,6 @@ function Footer() {
   return (
     <footer
       className="w-full text-white bg-gradient-to-r from-nigma-teal-dark via-nigma-dark to-nigma-dark"
-    //   style={{
-    //     background:
-    //       'radial-gradient(ellipse at 2% 42%, var(--nigma-teal-dark) 0%, var(--nigma-dark) 50%, var(--nigma-ink) 100%)',
-    //   }}
     >
       <div className="mx-auto grid max-w-360 grid-cols-1 gap-9 px-5 py-12 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 sm:px-8 lg:grid-cols-[minmax(0,1.7fr)_repeat(3,minmax(0,0.8fr))] lg:gap-12 lg:px-8 lg:py-16">
         <div className="flex flex-col items-start gap-4 sm:pr-4 lg:pr-12">
@@ -101,23 +98,24 @@ function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-8">
+        <div className="mx-auto flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between px-5 lg:px-10">
           <p className="text-md text-white/50">
             © {new Date().getFullYear()} Nigmatech Limited. All rights reserved.
           </p>
           <div aria-label="Social media" className="flex items-center gap-2">
-            {socialItems.map(({ label, mark }) => (
-              <span
+            {socialItems.map(({ label, mark, href }) => (
+              <a
                 key={label}
-                role="img"
-                aria-label={`${label} profile link not configured`}
-                title={`${label} profile link not configured`}
-                className="flex size-10 items-center cursor-pointer justify-center rounded-full border border-white/15 text-white/60"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} profile`}
+                className="flex size-10 items-center justify-center rounded-full border border-white/15 text-white/60 transition-colors hover:text-white"
               >
                 <span aria-hidden="true" className="text-[11px] font-semibold leading-none">
                   {mark}
                 </span>
-              </span>
+              </a>
             ))}
           </div>
         </div>
