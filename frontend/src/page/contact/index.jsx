@@ -16,7 +16,6 @@ import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
-import { Label } from "../../components/ui/label";
 import {
   Select,
   SelectContent,
@@ -47,8 +46,18 @@ const labelClass = "block text-[16px] font-semibold text-nigma-ink";
 function Contact() {
   const [interest, setInterest] = useState("Nuvio");
   const [submitted, setSubmitted] = useState(false);
-  const [demoEmail, setDemoEmail] = useState("ada@");
-  const [demoCompany, setDemoCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  function getEmailError(input) {
+    if (!input.value.trim()) return "Work email is required.";
+    return input.validity.valid ? "" : "Enter a valid email address.";
+  }
+
+  function handleEmailChange(event) {
+    setEmail(event.currentTarget.value);
+    if (emailError) setEmailError(getEmailError(event.currentTarget));
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -126,7 +135,7 @@ function Contact() {
                   <span className="block text-[14px] leading-4 text-white/50">
                     Phone / WhatsApp
                   </span>
-                  <span className="block leading-5">+234 906 802 2673</span>
+                  <span className="block leading-5">+234 906 8022 673</span>
                 </span>
               </div>
               <div className="flex items-center gap-3 text-md text-white/85">
@@ -166,9 +175,20 @@ function Contact() {
                     name="email"
                     required
                     type="email"
-                    className={inputClass}
+                    value={email}
+                    onChange={handleEmailChange}
+                    onBlur={(event) => setEmailError(getEmailError(event.currentTarget))}
+                    onInvalid={(event) => setEmailError(getEmailError(event.currentTarget))}
+                    aria-invalid={emailError ? "true" : undefined}
+                    aria-describedby={emailError ? "work-email-error" : undefined}
+                    className={`${inputClass} ${emailError ? "border-destructive focus:border-destructive focus:ring-destructive/20" : ""}`}
                     placeholder="ada@company.com"
                   />
+                  {emailError && (
+                    <span id="work-email-error" role="alert" className="text-[11px] leading-4 text-destructive">
+                      {emailError}
+                    </span>
+                  )}
                 </label>
                 <label className={`${labelClass} space-y-1`}>
                   Phone / WhatsApp
@@ -236,6 +256,7 @@ function Contact() {
                 How can we help?
                 <Textarea
                   name="message"
+                  required={true}
                   rows="3"
                   className="mt-1.5 min-h-24 w-full resize-y rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-nigma-ink placeholder:text-muted-foreground/70 outline-none transition focus:border-nigma-teal focus:ring-2 focus:ring-nigma-teal/20"
                   placeholder="Tell us about your current systems and what you'd like to improve..."
@@ -269,82 +290,6 @@ function Contact() {
         </div>
       </section>
 
-      <section className="bg-[radial-gradient(ellipse_at_72%_28%,rgba(191,227,231,0.32),transparent_44%),#f3f6f5] py-14 sm:py-16 lg:py-20">
-        <div className="mx-auto w-[min(1220px,calc(100%-40px))] sm:w-[min(1220px,calc(100%-64px))]">
-          <p className="text-3xl font-bold text-nigma-teal-dark">Form states</p>
-          <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight sm:text-[38px]">
-            Success and validation
-          </h2>
-          <p className="mt-2 text-md leading-6 text-muted-foreground sm:text-base">
-            Show the success card in place of form after submission.
-          </p>
-
-          <div className="mt-7 grid gap-4 sm:grid-cols-2">
-            <Card
-              role="article"
-              className="gap-0 rounded-2xl border border-white/90 bg-white/55 p-5 ring-0 shadow-[0_14px_38px_rgba(5,10,11,0.07)] sm:p-7"
-            >
-              <span className="flex size-12 items-center justify-center rounded-full bg-nigma-teal-pale text-nigma-teal-dark">
-                <CheckCircle2 aria-hidden="true" className="size-5" />
-              </span>
-              <h3 className="mt-4 font-heading text-[20px] font-semibold">
-                Thanks, we&apos;ve got it
-              </h3>
-              <p className="mt-2 max-w-[458px] text-[15px] leading-5 text-muted-foreground">
-                We'll reply within one business day. In the meantime, see our
-                sportlight ERP projects
-              </p>
-              <Button
-                render={<Link to="/sportlight-projects" />}
-                className="mt-4 h-auto min-h-12 gap-2 rounded-full bg-white px-4 text-[15px] font-bold text-nigma-ink shadow-sm hover:bg-nigma-teal-pale"
-              >
-                See sportlight Projects
-                <ArrowRight aria-hidden="true" className="size-3.5" />
-              </Button>
-            </Card>
-
-            <Card
-              role="article"
-              className="gap-0 rounded-2xl border border-white/90 bg-white/55 p-5 ring-0 shadow-[0_14px_38px_rgba(5,10,11,0.07)] sm:p-7"
-            >
-              <h3 className="font-heading text-sm font-semibold">
-                Validation states
-              </h3>
-              <div className="mt-4">
-                <Label htmlFor="example-work-email" className={labelClass}>
-                  Work email
-                </Label>
-                <Input
-                  id="example-work-email"
-                  aria-invalid="true"
-                  aria-describedby="email-error"
-                  value={demoEmail}
-                  onChange={(event) => setDemoEmail(event.target.value)}
-                  className="mt-2 h-10 w-full rounded-lg border-2 border-destructive bg-white px-3 text-sm text-nigma-ink outline-none"
-                />
-                <p
-                  id="email-error"
-                  className="mt-2 text-[11px] leading-4 font-medium text-destructive"
-                >
-                  Enter a valid email address
-                </p>
-              </div>
-              <div className="mt-6">
-                <Label htmlFor="example-company" className={labelClass}>
-                  Company
-                </Label>
-                <Input
-                  id="example-company"
-                  value={demoCompany}
-                  onChange={(event) => setDemoCompany(event.target.value)}
-                  className={`${inputClass} mt-2 bg-white`}
-                  placeholder="Company name"
-                />
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

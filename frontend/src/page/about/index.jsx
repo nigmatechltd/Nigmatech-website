@@ -4,8 +4,10 @@ import {
   Blocks,
   Camera,
   Image,
+  Layers3,
   Lightbulb,
   Network,
+  NetworkIcon,
   ShieldCheck,
   Sparkles,
   UsersRound,
@@ -25,7 +27,7 @@ const principles = [
   {
     number: "02",
     title: 'Practical delivery',
-    copy: 'Working software in weeks, with clear steps and useful milestones.',
+    copy: 'Working software in weeks, not slide decks for months.',
   },
   {
     number: "03",
@@ -37,14 +39,14 @@ const principles = [
 const products = [
 
   {
-    Icon: Network,
+    Icon: Layers3,
     title: 'ERP solutions',
-    copy: 'ERPNext implementation, customisation and support.',
+    copy: 'ERP implementation, customisation and support.',
     action: 'See ERP solutions',
     to: '/solution/erp-software',
   },
   {
-    Icon: ArrowUpRight,
+    Icon: NetworkIcon,
     title: 'Custom software',
     copy: 'Business applications, automation and integrations.',
     action: 'Discuss a project',
@@ -74,7 +76,7 @@ function About() {
             We build software around how African businesses actually work.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-white/65 sm:text-lg sm:leading-8">
-            Nigmatech is a Lagos-based software company. We impliment ERP and build custom software, and we stay on to support it all.
+            Nigmatech is a Lagos-based software company. We implement ERP and build custom software, and we stay on to support it all.
           </p>
         </div>
       </section>
@@ -89,7 +91,7 @@ function About() {
                                     </span>
                                     <span className="absolute bottom-6 left-6 inline-flex max-w-[85%] items-center gap-1.5 truncate rounded-full border border-white/50 bg-[nigma-dark] px-2.5 py-2 text-[12px] font-medium text-[#1d2d31] shadow-sm sm:text-[12px]">
                                       <Camera size={11} className="shrink-0 text-nigma-teal-light" />
-                                      <span className="truncate text-white/90">Photo. Team wroking session in the Lagos office</span>
+                                      <span className="truncate text-white/90">Photo. Team working session in the Lagos office</span>
                                     </span>
              
             
@@ -100,10 +102,10 @@ function About() {
               ERP first, built for the long term.
             </h2>
             <p className="mt-5 text-[17px] leading-7 text-muted-foreground">
-              We started by implementing ERP for businesses that needed systems their teams would actually use. not just a go-live date.
+              We started by implementing ERP for businesses that needed systems that their teams would actually use. not just a go-live date.
             </p>
             <p className="mt-4 text-[17px] leading-7 text-muted-foreground">
-              Today we impliment ERP across manufacturing, construction, distribution, retail and HR, and build custom software when nothing off the shelf fits with the same practical, long-term approach.
+              Today we implement ERP across manufacturing, construction, distribution, retail and HR, and build custom software when nothing off the shelf fits with the same practical, long-term approach.
             </p>
           </div>
         </div>
@@ -149,7 +151,7 @@ function About() {
                   <Button
                     render={<Link to={to} />}
                     variant="outline"
-                    className="mt-3 h-auto w-fit gap-2 rounded-full border-white/10 bg-white/[0.07] px-3.5 py-2 text-xs font-semibold text-white/80 hover:bg-nigma-teal hover:text-nigma-ink"
+                    className="mt-3 h-auto w-fit gap-2 rounded-full border-white/10 bg-white/[0.07] px-5 py-4 text-[16px] font-semibold text-white/80 hover:bg-nigma-teal hover:text-nigma-ink"
                   >
                     {action}<ArrowRight aria-hidden="true" className="size-3.5" />
                   </Button>
@@ -186,7 +188,8 @@ function About() {
                   </CardContent>
                 </Card>
                 
-                <p className="mt-1 text-md text-muted-foreground">[Name]</p>
+                <p className="mt-1 text-md font-semibold">[Name]</p>
+                <p className="mt-1 text-[14px] text-muted-foreground">[Role]</p>
               </div>
             ))}
           </div>
@@ -195,7 +198,7 @@ function About() {
             <CardContent className="p-0">
             <h2 className="mx-auto max-w-xl font-heading text-3xl font-semibold tracking-tight sm:text-[40px]">Let&apos;s build something useful together</h2>
             <p className="mx-auto mt-4 max-w-lg text-md leading-6 text-white/60 sm:text-[17px]">Tell us what you&apos;re working on. We reply within one business day.</p>
-            <Button render={<Link to="/contact" />} className="mt-7 h-auto min-h-13 gap-2 rounded-full bg-nigma-teal px-7 text-sm font-bold text-nigma-ink hover:bg-nigma-teal-light">
+            <Button render={<Link to="/contact" />} className="mt-7 h-auto min-h-13 gap-2 rounded-full bg-nigma-teal px-7 text-[16px] font-bold text-nigma-ink hover:bg-nigma-teal-light">
               Start a conversation<ArrowRight aria-hidden="true" className="size-4" />
             </Button>
             </CardContent>

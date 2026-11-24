@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ArrowUpRight, ChevronDown, Layers3, Menu, Utensils } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,7 +18,7 @@ function Header() {
   const closeMobileNavigation = () => setMobileNavigationOpen(false)
 
   return (
-    <header className="relative z-40 w-full px-4 pt-5 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full px-4 pt-5 sm:px-6 lg:px-8">
       <div className="mx-auto flex h-15 max-w-310 items-center justify-between rounded-full border border-white/10 bg-gradient-to-r from-[#050a0b]/95 via-[#0c2729]/95 to-[#10565c]/95 px-3 text-white shadow-lg shadow-black/10 backdrop-blur-xl sm:px-5">
         <Link
           to="/"
@@ -43,7 +43,9 @@ function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
-              className="w-72 rounded-2xl border border-white/10 bg-[#0b1718] p-2 text-white shadow-2xl shadow-black/30"
+              sideOffset={18}
+              alignOffset={-120}
+              className="w-[500px] rounded-2xl border border-white/10 bg-[#0b1718] p-2 text-white shadow-2xl shadow-black/30 backdrop-blur-xl"
             >
              
               <DropdownMenuItem
@@ -54,17 +56,18 @@ function Header() {
                   <Layers3 aria-hidden="true" className="size-5" />
                 </span>
                 <span className="flex flex-col gap-1">
-                  <span className="font-medium text-white group-hover/dropdown-menu-item:text-white">02 ERP Software</span>
-                  <span className="text-sm leading-relaxed text-white/55 group-hover/dropdown-menu-item:text-white/55">
-                    Business systems built around your workflow
+                  <span className="font-medium text-white group-hover/dropdown-menu-item:text-white">ERP Software</span>
+                  <div className="flex items-center gap-1 text-sm text-white/55 group-hover/dropdown-menu-item:text-white/55">
+                    <span className="text-sm leading-relaxed text-white/55 group-hover/dropdown-menu-item:text-white/55">
+                    ERPnext implimentation, customization and support for growing businesses.
                   </span>
+                  <ArrowUpRight aria-hidden="true" className="size-4 text-nigma-teal-dark group-hover/dropdown-menu-item:text-nigma-teal-dark" />
+                  </div>
                 </span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link to="/case-study" className={navLinkClass}>
-            Case studies
-          </Link>
+         
           <Link to="/about" className={navLinkClass}>
             About
           </Link>
@@ -136,30 +139,27 @@ function Header() {
               </div>
 
               <div className="flex flex-col gap-1">
-                <Link
-                  to="/case-study"
-                  onClick={closeMobileNavigation}
-                  className="flex min-h-11 items-center justify-between rounded-xl px-3 text-md text-white/80 transition-colors hover:bg-white/[0.06] hover:text-white"
-                >
-                  Case studies
-                  <ArrowUpRight aria-hidden="true" className="size-4 text-white/40" />
-                </Link>
-                <Link
+                
+                <NavLink
                   to="/about"
                   onClick={closeMobileNavigation}
-                  className="flex min-h-11 items-center justify-between rounded-xl px-3 text-md text-white/80 transition-colors hover:bg-white/[0.06] hover:text-white"
+                  className={({ isActive }) =>
+                    `flex min-h-11 items-center justify-between rounded-xl px-3 text-md transition-colors ${isActive ? 'bg-white/10 text-white' : 'text-white/80 hover:bg-white/[0.06] hover:text-white'}`
+                  }
                 >
                   About
                   <ArrowUpRight aria-hidden="true" className="size-4 text-white/40" />
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/contact"
                   onClick={closeMobileNavigation}
-                  className="flex min-h-11 items-center justify-between rounded-xl px-3 text-md text-white/80 transition-colors hover:bg-white/[0.06] hover:text-white"
+                  className={({ isActive }) =>
+                    `flex min-h-11 items-center justify-between rounded-xl px-3 text-md transition-colors ${isActive ? 'bg-white/10 text-white' : 'text-white/80 hover:bg-white/[0.06] hover:text-white'}`
+                  }
                 >
                   Contact
                   <ArrowUpRight aria-hidden="true" className="size-4 text-white/40" />
-                </Link>
+                </NavLink>
               </div>
             </nav>
 

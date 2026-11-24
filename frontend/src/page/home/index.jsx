@@ -14,12 +14,13 @@ import {
   Building2,
   ChartColumnIncreasing,
   Check,
+  Image,
   Layers3,
+  LockKeyhole,
   LocationEdit,
   MessageCircle,
   Package,
   Phone,
-  Play,
   Rocket,
   ShieldCheck,
   ShoppingBag,
@@ -44,8 +45,8 @@ const solutions = [
   {
     id: "nuvio",
     label: "ERP Software",
-    title: "ERP implimented properly for your business",
-    copy: "Finance, inventory, manufacturing, projects, HR and CRM in one system, set up around how you actually work and supported after go-live",
+    title: "ERP implemented properly for your business",
+    copy: "Finance, inventory, manufacturing, projects, HR, and CRM in one system—configured around how you actually work and supported after go-live.",
     to: "/solution/erp-software",
     action: "Explore ERP Software",
     Icon: Layers3,
@@ -53,8 +54,8 @@ const solutions = [
   {
     id: "erp",
     label: "Custom software",
-    title: "Built around your process, when nothing off the sheft fits",
-    copy: "Business applications, workflow automation and integrations that connect your ERP, payment gatways and messaging, then supported for the long term",
+    title: "Built around your process when off-the-shelf software does not fit.",
+    copy: "Business applications, workflow automation, and integrations that connect your ERP, payment gateways, and messaging—supported for the long term.",
     to: "/contact",
     action: "Discuss your project",
     Icon: Phone,
@@ -70,12 +71,12 @@ const capabilities = [
   {
     Icon: Rocket,
     title: "Practical delivery",
-    copy: "Working software in weeks, shown to you in regular demo.",
+    copy: "Working software delivered in weeks, with regular demonstrations.",
   },
   {
     Icon: LocationEdit,
-    title: "Built for here",
-    copy: "Local payment gateways. whatsApp and local tax rules are already built in",
+    title: "Built for local operations.",
+    copy: "Local payment gateways, WhatsApp, and local tax rules are built in.",
   },
 ];
 
@@ -89,24 +90,24 @@ const steps = [
   {
     number: "02",
     title: "Design",
-    copy: "We agree the scope, workflows and succes measures with you before building anything.",
+    copy: "We agree the scope, workflows and success measures with you before building anything.",
   },
   {
     number: "03",
-    title: "Impliment",
+    title: "Implement",
     copy: "We build and configure in short cycles with regular demos so there are no surprises.",
   },
   {
     number: "04",
-    title: "improve",
-    copy: "After go-live we stay on to support your team, tune the system and also what you need next.",
+    title: "Improve",
+    copy: "After go-live, we support your team, fine-tune the system, and help you plan what comes next.",
   },
 ];
 
 const principles = [
   {
     title: "Taiwo Ade",
-    copy: "A shared view of what is happening and what needs attention.",
+    copy: "Shared visibility into what is happening and what needs attention.",
     company: "CEO, Manufacturing Company",
   },
   {
@@ -123,20 +124,20 @@ const principles = [
 
 const faqs = [
   {
-    q: "What does Nigmatech build?",
-    a: "Nigmatech builds and implements Nuvio for cloud kitchens, ERP software, and custom digital systems for growing businesses.",
+    q: "What does Nigmatech do?",
+    a: "We implement, customise, and support ERPNext for growing companies. When nothing off the shelf fits, we design and build custom software around your process.",
   },
   {
-    q: "What is Nuvio?",
-    a: "Nuvio brings cloud-kitchen ordering and operations into one workspace, helping teams keep menus, orders, payments, and kitchen activity connected.",
+    q: "Do you only work with Nigerian businesses?",
+    a: "No. We work with businesses in Nigeria and support projects in other markets too.",
   },
   {
-    q: "Can you work with the systems we already use?",
-    a: "We start by understanding your current tools and workflows, then recommend a practical approach for configuration, integration, or custom software.",
+    q: "How quickly can we get started?",
+    a: "After an initial conversation, we’ll understand your needs, recommend a practical approach, and agree on a timeline to get started.",
   },
   {
-    q: "Do you support implementation after launch?",
-    a: "Implementation and ongoing support are part of the way we work, so your team has help as the system becomes part of daily operations.",
+    q: "Do you offer support after launch?",
+    a: "Yes. We provide ongoing support after launch to help your team use the system and address any issues that come up.",
   },
 ];
 
@@ -150,14 +151,14 @@ function DashboardPreview() {
     <div
       className="dashboard-preview"
       role="img"
-      aria-label="Illustrative finance dashboard showing revenue, receivables, income versus expenses, and recent invoices"
+      aria-label="Finance dashboard showing revenue, receivables, monthly income and expenses, recent invoices, and an approved estimate notification"
     >
       <div className="dashboard-window">
         <div className="dashboard-browser" aria-hidden="true">
           <i />
           <i />
           <i />
-          <span>erp.yourcompany.app/accounting</span>
+          <span><LockKeyhole aria-hidden="true" size={10} />erp.yourcompany.com/app/accounting</span>
         </div>
         <div className="dashboard-inner">
           <div className="dashboard-title">
@@ -177,18 +178,14 @@ function DashboardPreview() {
             <div className="dashboard-receivables">
               <small>Receivables</small>
               <b>₦38.4m</b>
-              <span className="metric-negative">−6% over 30 days</span>
-            </div>
-            <div className="dashboard-active-plans">
-              <small>Active plans</small>
-              <b>312</b>
-              <span>This week</span>
+              <span className="metric-negative">−6% overdue</span>
             </div>
           </div>
 
           <div className="dashboard-chart">
             <div className="dashboard-chart-title">
               <b>Income vs expenses</b>
+              <small>Monthly</small>
             </div>
             <div className="dashboard-bars" aria-hidden="true">
               {income.map((height, index) => (
@@ -203,14 +200,27 @@ function DashboardPreview() {
           <div className="dashboard-order-list" aria-label="Recent invoices">
             <div className="dashboard-order">
               <span><b>Lagos Retail Co.</b><small>ACC-SINV-0918</small></span>
+              <em>Paid</em>
+              <span className="dashboard-order-amount">₦2,450,000</span>
             </div>
             <div className="dashboard-order">
               <span><b>Eko Foods Ltd</b><small>ACC-SINV-0917</small></span>
+              <em className="dashboard-pending">Pending</em>
+              <span className="dashboard-order-amount">₦880,000</span>
             </div>
             <div className="dashboard-order">
               <span><b>Prime Supplies</b><small>ACC-PINV-0332</small></span>
+              <em>Paid</em>
+              <span className="dashboard-order-amount">₦1,120,000</span>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="dashboard-notification" aria-hidden="true">
+        <span><Check size={17} /></span>
+        <div>
+          <b>Estimate approved</b>
+          <small>₦4,250,000 · Kitchen cabinets · EST-0418</small>
         </div>
       </div>
     </div>
@@ -227,7 +237,7 @@ function Home() {
             <Badge variant="outline" className="hero-badge h-auto">Nigmatech. Lagos, Nigeria</Badge>
             <h1>Software that keeps your business moving.</h1>
             <p className="build">
-              We impliment ERP software that growing businesses actually use, and build custom software when 
+              We implement ERP software that growing businesses actually use, and build custom software when 
               nothing off the shelf fits
               Then we stay to support it.
             </p>
@@ -244,7 +254,7 @@ function Home() {
               <span>
                 <Check size={12} />
               </span>
-              <p>Build for your operations</p>
+              <p>Built for your operations</p>
             </div>
             <div className="hero-proof">
               <span>
@@ -256,7 +266,7 @@ function Home() {
               <span>
                 <Check size={12} />
               </span>
-              <p>Support after lunch</p>
+              <p>Support after launch</p>
             </div>
             </div>
           </div>
@@ -289,18 +299,18 @@ function Home() {
               supports the systems businesses run on.
             </h2>
             <p>
-              Our ERP consultants and engineers work directly with your tem: ERP specialists for implimentation,
+              Our ERP consultants and engineers work directly with your team: ERP specialists for Implementation,
               and  builders for anything custom. We measure success by whether your team uses what we deliver.
             </p>
             <Link className="home-text-link" to="/about">
-              More about Nigmatech <ArrowRight size={14} />
+              More about us <ArrowRight size={14} />
             </Link>
           </div>
           <div className="fact-grid">
             <Card role="article" className="gap-0 p-0 ring-0">
               <b>20+</b>
               <strong></strong>
-              <small>businesses running on systems we built or implimented</small>
+              <small>Businesses running on systems we built or Implemented</small>
             </Card>
             <Card role="article" className="gap-0 p-0 ring-0">
               <b>5</b>
@@ -310,12 +320,12 @@ function Home() {
             <Card role="article" className="gap-0 p-0 ring-0">
               <b>3</b>
               
-              <small>Contries with live deployments</small>
+              <small>Countries with live deployments</small>
             </Card>
              <Card role="article" className="gap-0 p-0 ring-0">
               <b>10</b>
               
-              <small>years implimenting ERPNext</small>
+              <small>Years Implementing ERP</small>
             </Card>
           </div>
         </div>
@@ -325,8 +335,8 @@ function Home() {
         <div className="home-container">
           <div className="section-heading heading-row">
             <div>
-              <h2>ERP for the whole business, and software for the gaps</h2>
-              <p className="">you work directly with the people who impliment, build and support your systems</p>
+              <h2>ERP for your whole business and custom software for the gaps.</h2>
+              <p className="">You work directly with the people who Implement, build and support your systems</p>
               
             </div>
           </div>
@@ -349,20 +359,15 @@ function Home() {
                     <i />
                   </div>
                   <span>
-                    {id === "nuvio" ? (
-                     
-                     <Layers3 size={30} /> 
-                    ) : (
-                      <Utensils size={30} />
-                    )}
+                   <Image size={30}/>
                   </span>
-                  <small className='text-[14px]'>
+                  <small className='text-[14px] font-semibold'>
                     {id === "nuvio"
                       ? "Orders moving together"
                       : "Your work, connected"}
                   </small>
                 </div>
-                <Link to={to} className="solution-link">
+                <Link to={to} className="solution-link py-2">
                   {action}
                   <ArrowRight size={14} />
                 </Link>
@@ -376,7 +381,7 @@ function Home() {
         <div className="home-container">
           <div className="section-heading heading-row dark-heading">
               
-              <h2>We impliment it, we build what's missing , and we stay to support it.</h2>
+              <h2>We implement your ERP, build what is missing, and stay to support it.</h2>
 
           </div>
           <div className="capability-grid">
@@ -398,7 +403,7 @@ function Home() {
           <div className="section-heading heading-row">
             <div className="section-heading">
               
-              <h2>A clear path from first call to go-live, and beyond</h2>
+              <h2>A clear path from the first call to go-live and beyond.</h2>
             </div>
             <p>
               The same four stages on every project, so you always know what happens next.
@@ -431,7 +436,7 @@ function Home() {
               <Card role="article" className="gap-0 ring-0 principle-card" key={title}>
                 <div>
                   <span>“</span>
-                  <small>BUILT AROUND THE WORK</small>
+                  <small>ERP Software</small>
                 </div>
                 <p>{copy}</p>
                 <footer>
@@ -448,34 +453,19 @@ function Home() {
             ))}
           </div>
           
-          <Card role="article" className="gap-0 ring-0 story-card lg:mt-0 mt-20 border">
+          <Card role="article" className="gap-0 ring-0 story-card lg:mt-0 mt-20 border md:h-[340px] h-auto">
             <div className="story-visual">
-              <div className="story-window">
-                <div>
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <span />
-                <span />
-                <div className="story-bars">
-                  {[35, 70, 48, 91, 61, 78, 45, 85].map((height, i) => (
-                    <i key={i} style={{ height: `${height}%` }} />
-                  ))}
-                </div>
-                <b>
-                  <Play size={20} fill="currentColor" />
-                </b>
-              </div>
+              <Image aria-hidden="true" size={17} />
+              <small>Photo · Cabinet workshop, finished units on the floor</small>
             </div>
             <div className="story-copy">
-              <span className="eye">Featuring project - Manufacturing</span>
+              <span className="eye">Featured project: Manufacturing</span>
               <h3>Estimates in minutes, not days</h3>
               <p>
-                A custom estimating module that prices cabinets from carcass, door, drawer, hardware, material and finish lookup tables, then turns approved estimates into ESP itmes and orders.
+                A custom estimating module that prices cabinets from carcass, door, drawer, hardware, material and finish lookup tables, then turns approved estimates into ERP items and orders.
               </p>
-              <Link className="home-text-link" to="/solution/nuvio">
-                See how Nuvio works <ArrowRight size={14} />
+              <Link className="home-text-link" to="/solution/sportlight">
+                See all spotlight projects <ArrowRight size={14} />
               </Link>
             </div>
           </Card>
@@ -485,16 +475,7 @@ function Home() {
 
       <section className="home-section faq-section">
         <div className="home-container faq-grid">
-          {/* <div className="section-copy">
-            <span className="eye">GOOD QUESTIONS</span>
-            
-            <p>A few useful things to know about working with Nigmatech.</p>
-            <Link className="home-text-link" to="/contact">
-              Ask us something else <ArrowRight size={14} />
-            </Link>
-          </div> */}
-          <h2>Frequently Asked
-Questions</h2>
+          <h2>Questions, answered</h2>
           <Accordion className="faq-list" defaultValue={["home-faq-0"]}>
             {faqs.map(({ q, a }, i) => (
               <AccordionItem key={q} value={`home-faq-${i}`} className="rounded-[10px] border border-black/[.07] bg-white/[.76] shadow-[0_6px_18px_rgba(5,10,11,.03)]">
@@ -514,9 +495,9 @@ Questions</h2>
         <div className="home-container">
           <div className="home-cta">
             
-            <h2>Let's map your processes</h2>
+            <h2>Let’s map your processes</h2>
             <p>
-              book a 30-minute call. We'll walk through your ERP or custom software needs and give you a clear next step.
+              Book a 30-minute call. We’ll walk through your ERP or custom software needs and give you a clear next step.
             </p>
             <div className="home-actions">
             <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">

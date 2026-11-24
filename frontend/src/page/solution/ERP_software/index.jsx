@@ -4,19 +4,33 @@ import {
   Boxes,
   BriefcaseBusiness,
   Camera,
+  ChartNoAxesCombined,
   Check,
   CircleDollarSign,
   ClipboardCheck,
+  ClipboardList,
+  CreditCard,
+  Factory,
+  FactoryIcon,
   FileCheck2,
+  FolderKanban,
   Gauge,
+  HardHat,
+  Headset,
   Image,
   Layers3,
   Link2,
+  MessageSquare,
   PackageCheck,
   Quote,
+  ShieldCheck,
   Sparkles,
+  Store,
   Truck,
+  User,
   UsersRound,
+  WalletCards,
+  Warehouse,
   Wrench,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -42,6 +56,7 @@ const spotlightProjects = [
     tags: ["Estimating", "Manufacturing", "Selling"],
     statValue: "XX%",
     statLabel: "faster quoting",
+    logo: <Factory size={16} />
   },
   {
     category: "Construction",
@@ -52,6 +67,7 @@ const spotlightProjects = [
     tags: ["Projects", "Cost control", "Buying"],
     statValue: "XX",
     statLabel: "active projects tracked",
+    logo: <HardHat size={16} />
   },
   {
     category: "Trade distribution",
@@ -62,6 +78,7 @@ const spotlightProjects = [
     tags: ["Buying", "Stock", "Integrations"],
     statValue: "XXk",
     statLabel: "supplier items synced",
+    logo: <Warehouse size={16} />
   },
   {
     category: "Retail & trading",
@@ -72,6 +89,7 @@ const spotlightProjects = [
     tags: ["Accounting", "Compliance", "Local tax"],
     statValue: "XXk",
     statLabel: "invoices reported to ZATCA",
+    logo: <Store size={16} />
   },
   {
     category: "Workforce & HR",
@@ -82,95 +100,101 @@ const spotlightProjects = [
     tags: ["HR", "Payroll", "People"],
     statValue: "XXX",
     statLabel: "employees on one system",
+    logo: <UsersRound size={16} />
   },
 ];
 
 const modules = [
   [
-    CircleDollarSign,
+    WalletCards,
     "Finance & accounting",
-    "See cash flow, budgets and accounts with cleaner financial records.",
+    "General ledger, receivables, bancking, budgets and multi-company consolidation.",
   ],
   [
     Boxes,
     "Inventory & warehousing",
-    "Know what is available, where it is and what needs replenishing.",
+    "Stock across multiple warehouses, batches and serial numbers with automatic reordering.",
+  ],
+  [
+    ClipboardList,
+    "Procurement",
+    "Purchase requests, supplier purchase orders and three-way matching.",
   ],
   [
     UsersRound,
-    "People & payroll",
-    "Keep employee records, leave and payroll processes together.",
-  ],
-  [
-    ClipboardCheck,
-    "Procurement",
-    "Manage suppliers, purchase requests and approvals in one flow.",
-  ],
-  [
-    BriefcaseBusiness,
     "Sales & CRM",
-    "Follow leads, quotes, orders and customer history from one place.",
+    "Leads , quotations sales orders and pricing rule with a full history for customer.",
   ],
   [
-    Gauge,
+    User,
+    "HR & payroll",
+    "Employee records, leave, attendance, expense claims and payroll.",
+  ],
+  [
+    FactoryIcon,
     "Manufacturing",
-    "Connect bills of materials, production plans and work orders.",
+    "Bills of materials, work orders, production planning and costing.",
   ],
   [
     Layers3,
     "Projects",
-    "Track project work, time, costs and progress as it happens.",
+    "Track, timesheets, project costing and client billing.",
   ],
   [
-    BarChart3,
-    "Reports & dashboards",
-    "Turn connected operational data into useful, timely views.",
+    Headset,
+    "Helpdesk",
+    "TCustomer support tickets with service-level targets and self-service portal.",
+  ],
+   [
+    ChartNoAxesCombined,
+    "Analytics and dashboards",
+    "Live dashboards and reports for management, finance and operations.",
   ],
 ];
 
 const practices = [
   [
-    FileCheck2,
-    "ERP configuration",
-    "Fit the system to your processes, roles and approval paths.",
+    
+    "ERP setup & configuration",
+    "Your chart of accounts, company structure, roles and workflows, set up to match how your business actually works.",
   ],
   [
-    UsersRound,
-    "People training",
-    "Give each team practical guidance for the work they do every day.",
+    
+    "Process mapping",
+    "We document how work actually flows today before deciding what the system should do.",
   ],
   [
-    PackageCheck,
+    
     "Data migration",
-    "Prepare, map and validate important business records before go-live.",
+    "PCustomers, itmes, balances and history moved over clearly and checked.",
   ],
   [
-    Wrench,
-    "Ongoing support",
-    "Get help refining workflows and keeping the system useful over time.",
+    
+    "Training & support",
+    "Hands-on training for each rol, then support after go-live from the team that built your system.",
   ],
 ];
 
 const connections = [
   [
-    Link2,
-    "Payment providers",
-    "Connect payment workflows with the tools your business already uses.",
+    CreditCard,
+    "Local payments gateways",
+    "Paystack and flutterwave connected directly to your invioces and receipts.",
   ],
   [
-    FileCheck2,
-    "Local tax & reporting",
-    "Shape finance workflows around your local reporting requirements.",
+    MessageSquare,
+    "WhatsApp & Telegram",
+    "Approves, reminders and notifications sent where your team already works.",
   ],
   [
-    Truck,
-    "Shipping & logistics",
-    "Coordinate fulfilment information with delivery and logistics partners.",
+    ShieldCheck,
+    "Tax & e-invoicing compliance",
+    "Tax setup and e-invoicing for each country you operate in.",
   ],
   [
-    Boxes,
-    "Business integrations",
-    "Connect ERP to selected systems through APIs and integrations.",
+    Sparkles,
+    "AI-assisted workflows",
+    "Help with drafting, summaring and data entry, built into the tools your team uses.",
   ],
 ];
 
@@ -187,7 +211,7 @@ const steps = [
   },
   {
     number: "03",
-    title: "Impliment",
+    title: "Implement",
     copy: "We build and configure in short cycles with regular demos so there are no surprises.",
   },
   {
@@ -201,24 +225,20 @@ const steps = [
 
 const faqs = [
   [
-    "What is ERP?",
-    "ERP is an open-source ERP platform that brings business functions such as accounting, inventory, sales, projects and people operations into one system.",
+    "What is ERPNext?",
+    "ERPNext is a complete, open-source ERP with no per-user licence fees. You own your data and your system, and you can extend it without being into a vendor." ,
   ],
   [
-    "How long does an ERP implementation take?",
+    "Can you take over an existing ERP setup?",
+    "Yes. We can review your current system, map the data and processes, and migrate to ERPNext with minimal disruption.",
+  ],
+  [
+    "Cloud or on premise?",
+    "We can host your system in the cloud or on your own servers, depending on your security and compliance requirements.",
+  ],
+  [
+    "How long does an implementation take?",
     "Timing depends on the number of teams, processes, integrations and data to move. We define the scope and a practical delivery plan together after discovery.",
-  ],
-  [
-    "Can ERP fit our processes?",
-    "ERP can be configured around many common workflows. When a requirement needs more, we can assess a custom workflow or integration.",
-  ],
-  [
-    "Can you migrate our existing data?",
-    "Yes. We can help review, map and validate the records that matter for your new system.",
-  ],
-  [
-    "What happens after go-live?",
-    "We can provide ongoing support, training and improvement work as your teams use the system.",
   ],
 ];
 
@@ -237,75 +257,78 @@ function DashboardPreview() {
 
   return (
     <div
-      className="dashboard-preview"
+      className="relative mx-auto aspect-[0.72] w-full max-w-[500px] overflow-hidden rounded-[22px] border border-white/20 bg-white text-[#050a0b] shadow-[0_28px_70px_rgba(0,0,0,0.35)] sm:aspect-square lg:translate-x-6"
       role="img"
       aria-label="Illustrative finance dashboard showing revenue, receivables, income versus expenses, and recent invoices"
     >
-      <div className="dashboard-window">
-        <div className="dashboard-browser" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-          <span>erp.yourcompany.app/accounting</span>
+      <div className="flex h-full min-w-0 flex-col overflow-hidden rounded-[inherit]">
+        <div className="flex h-9 shrink-0 items-center gap-1.5 border-b border-black/5 bg-[#f2f1ee] px-3" aria-hidden="true">
+          <i className="size-2 rounded-full bg-[#d8d6d1]" />
+          <i className="size-2 rounded-full bg-[#d8d6d1]" />
+          <i className="size-2 rounded-full bg-[#d8d6d1]" />
+          <span className="ml-1 flex min-w-0 max-w-[78%] items-center gap-1.5 truncate rounded-full bg-white px-2.5 py-1 text-[10px] text-[#596667]">
+            <span className="size-1.5 shrink-0 rounded-full bg-[#d8d6d1]" />
+            <span className="truncate">erp.yourcompany.app/app/accounting</span>
+          </span>
         </div>
-        <div className="dashboard-inner">
-          <div className="dashboard-title">
-            <span>
-              <b>Finance overview</b>
-              <small>FY 2026 · All branches</small>
-            </span>
+        <div className="flex min-h-0 flex-1 flex-col p-3 sm:p-4">
+          <div className="grid gap-0.5">
+            <b className="font-heading text-sm font-semibold sm:text-base">Finance overview</b>
+            <small className="text-[10px] text-[#596667] sm:text-[11px]">FY 2026 · All branches</small>
           </div>
 
-          <div className="dashboard-metrics">
-            <div>
-              <small>Revenue (YTD)</small>
-              <b>₦412m</b>
-              <span className="metric-positive">+18%</span>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <div className="grid min-w-0 gap-1 rounded-xl bg-[#f3f2ef] p-2.5 sm:p-3">
+              <small className="truncate text-[12px] text-[#596667] sm:text-[13px]">Revenue (YTD)</small>
+              <b className="font-heading text-sm font-semibold sm:text-base">₦412m</b>
+              <span className="text-[12px] font-medium text-[#167380] sm:text-[13px]">+18%</span>
             </div>
-            <div className="dashboard-receivables">
-              <small>Receivables</small>
-              <b>₦38.4m</b>
-              <span className="metric-negative">−6% over 30 days</span>
-            </div>
-            <div className="dashboard-active-plans">
-              <small>Active plans</small>
-              <b>312</b>
-              <span>This week</span>
+            <div className="grid min-w-0 gap-1 rounded-xl bg-[#f3f2ef] p-2.5 sm:p-3">
+              <small className="truncate text-[12px] text-[#596667] sm:text-[13px]">Receivables</small>
+              <b className="font-heading text-sm font-semibold sm:text-base">₦38.4m</b>
+              <span className="truncate text-[12px] font-medium text-[#167380] sm:text-[13px]">−6% overdue</span>
             </div>
           </div>
 
-          <div className="dashboard-chart">
-            <div className="dashboard-chart-title">
-              <b>Income vs expenses</b>
+          <div className="mt-2 rounded-xl bg-[#f3f2ef] p-2.5 sm:p-3">
+            <div className="flex items-center justify-between gap-2 text-[12px]">
+              <b className="font-semibold">Income vs expenses</b>
+              <small className="text-[12px] text-[#596667]">Monthly</small>
             </div>
-            <div className="dashboard-bars" aria-hidden="true">
+            <div className="mt-2 flex h-[58px] items-end gap-1.5 overflow-hidden sm:h-[76px]" aria-hidden="true">
               {income.map((height, index) => (
-                <span className="dashboard-bar-pair" key={index}>
-                  <i style={{ height: `${height}%` }} />
-                  <i style={{ height: `${expenses[index]}%` }} />
+                <span className="flex h-full min-w-0 flex-1 items-end gap-0.5" key={index}>
+                  <i className="min-w-0 flex-1 rounded-t-[3px] bg-[#25a1b0]" style={{ height: `${height}%` }} />
+                  <i className="min-w-0 flex-1 rounded-t-[3px] bg-[#bfe3e7]" style={{ height: `${expenses[index]}%` }} />
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="dashboard-order-list" aria-label="Recent invoices">
-            <div className="dashboard-order">
-              <span>
-                <b>Lagos Retail Co.</b>
-                <small>ACC-SINV-0918</small>
+          <div className="mt-2 flex-1" aria-label="Recent invoices">
+            <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-1.5 border-b border-black/10 py-1.5 sm:gap-2">
+              <span className="grid min-w-0 gap-0.5">
+                <b className="truncate text-[11px] font-semibold">Lagos Retail Co.</b>
+                <small className="truncate text-[10px] text-[#596667]">ACC-SINV-0918</small>
               </span>
+              <em className="rounded-full bg-[#dceff1] px-2 py-1 text-[11px] not-italic text-[#167380]">Paid</em>
+              <span className="whitespace-nowrap text-[11px] font-medium sm:text-[11px]">₦2,450,000</span>
             </div>
-            <div className="dashboard-order">
-              <span>
-                <b>Eko Foods Ltd</b>
-                <small>ACC-SINV-0917</small>
+            <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-1.5 border-b border-black/10 py-1.5 sm:gap-2">
+              <span className="grid min-w-0 gap-0.5">
+                <b className="truncate text-[11px] font-semibold">Eko Foods Ltd</b>
+                <small className="truncate text-[10px] text-[#596667]">ACC-SINV-0917</small>
               </span>
+              <em className="rounded-full bg-[#e8e7e4] px-2 py-1 text-[11px] not-italic text-[#404849]">Pending</em>
+              <span className="whitespace-nowrap text-[11px] font-medium sm:text-[11px]">₦880,000</span>
             </div>
-            <div className="dashboard-order">
-              <span>
-                <b>Prime Supplies</b>
-                <small>ACC-PINV-0332</small>
+            <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-1.5 py-1.5 sm:gap-2">
+              <span className="grid min-w-0 gap-0.5">
+                <b className="truncate text-[11px] font-semibold">Prime Supplies</b>
+                <small className="truncate text-[11px] text-[#596667]">ACC-PINV-0332</small>
               </span>
+              <em className="rounded-full bg-[#dceff1] px-2 py-1 text-[11px] not-italic text-[#167380]">Paid</em>
+              <span className="whitespace-nowrap text-[10px] font-medium sm:text-[11px]">₦1,120,000</span>
             </div>
           </div>
         </div>
@@ -316,58 +339,57 @@ function DashboardPreview() {
 
 function ERPSoftware() {
   return (
-    <main className="-mt-20 overflow-hidden bg-muted text-nigma-ink">
-      <section className="home-hero">
-        <nav
-          aria-label="ERP page navigation"
-          className="mx-auto mb-12 flex min-h-11 w-[calc(100%-2rem)] max-w-[1220px] items-center justify-between gap-3 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[15px] text-white/70 sm:mb-16 sm:w-[calc(100%-3rem)] sm:px-5"
+    <>
+      <nav
+        aria-label="ERP page navigation"
+        className="fixed left-1/2 top-4 z-50 mx-auto flex min-h-11 w-[calc(100%-2rem)] max-w-[1220px] -translate-x-1/2 items-center justify-between gap-3 rounded-full border border-white/10 bg-[#071112]/95 px-3 py-2 text-[15px] text-white/70 shadow-lg shadow-black/20 backdrop-blur-xl sm:w-[calc(100%-3rem)] sm:px-5"
+      >
+        <Link
+          to="/solution/erp-software"
+          className="flex shrink-0 items-center gap-2 text-[16px] font-bold text-white"
         >
-          <Link
-            to="/solution/erp-software"
-            className="flex shrink-0 items-center text-[16px] gap-2 font-bold text-white "
-          >
-            <span className="grid size-6 place-items-center rounded-md bg-nigma-teal text-nigma-ink">
-              <Boxes size={14} />
-            </span>
-            <span>
-              ERP <span className="font-normal text-white/45">Software</span>
-            </span>
-          </Link>
-          <div className="hidden items-center gap-5 md:flex">
-            <a href="#industries" className="hover:text-white text-md">
-              Overview
-            </a>
-            <a href="#capabilities" className="hover:text-white text-md">
-              Projects
-            </a>
-            <a href="#capabilities" className="hover:text-white text-md">
-              Modules
-            </a>
-            <a href="#implementation" className="hover:text-white text-md">
-              Services
-            </a>
-            <a href="#faq" className="hover:text-white">
-              FAQ
-            </a>
-          </div>
-          <Button
-            render={<Link to="/contact" />}
-            className="h-auto min-h-10 rounded-full text-[16px]  bg-nigma-teal px-4 py-2.5 font-bold text-nigma-ink hover:bg-nigma-teal-light"
-          >
-            Book a consultation
-          </Button>
-        </nav>
+          <span className="grid size-6 place-items-center rounded-md bg-nigma-teal text-nigma-ink">
+            <Boxes size={14} />
+          </span>
+          <span>
+            ERP <span className="font-normal text-white/45">Software</span>
+          </span>
+        </Link>
+        <div className="hidden items-center gap-5 md:flex">
+          <a href="#overview" className="text-md hover:text-white">
+            Overview
+          </a>
+          <a href="#projects" className="text-md hover:text-white">
+            Projects
+          </a>
+          <a href="#capabilities" className="text-md hover:text-white">
+            Modules
+          </a>
+          <a href="#implementation" className="text-md hover:text-white">
+            Services
+          </a>
+          <a href="#faq" className="hover:text-white">
+            FAQ
+          </a>
+        </div>
+        <Button
+          render={<Link to="/contact" />}
+          className="h-auto min-h-10 rounded-full bg-nigma-teal px-4 py-2.5 text-[16px] font-bold text-nigma-ink hover:bg-nigma-teal-light"
+        >
+          Book a consultation
+        </Button>
+      </nav>
+      <main className="-mt-20 overflow-hidden bg-muted text-nigma-ink">
+      <section id="overview" className="home-hero scroll-mt-20">
+        <div aria-hidden="true" className="mb-12 h-11 sm:mb-16" />
         <div className="home-container hero-layout">
           <div className="hero-copy">
             <Badge variant="outline" className="hero-badge h-auto">
-              Nigmatech. Lagos, Nigeria
+              ERP Software
             </Badge>
-            <h1>Software that keeps your business moving.</h1>
-            <p className="build">
-              We impliment, customise and support ERP for growing businesses.
-              Finace, inventory, manufacturing, projects and people in our
-              system, set up around how you actually work.
-            </p>
+            <h1>ERP your teams will actually use.</h1>
+            <p className="">We implement, customise and support ERP for growing businesses. Finance, inventory, manufacturing, projects and people in one system, set up around how you actually work.</p>
+           
             <div className="home-actions">
               <Button
                 render={<Link to="/contact" />}
@@ -418,17 +440,17 @@ function ERPSoftware() {
         </div>
       </section>
 
-      <section id="industry-cards" className="px-4 py-16 sm:px-6 sm:py-20">
+      <section id="projects" className="scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-[1250px] container">
           <div className="mb-9 flex flex-col justify-between gap-4 sm:mb-11 sm:flex-row sm:items-end">
             <div>
-              <p className="text-md font-bold uppercase tracking-[.18em] text-nigma-teal-dark">
+              <p className="text-[20px] font-bold tracking-[.18em] text-nigma-teal-dark">
                 Sportlight projects
               </p>
-              <h2 className="mt-3 max-w-xl font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2 className="mt-3 max-w-xl font-heading text-3xl font-semibold  tracking-tight sm:text-4xl">
                 ERP that fits the industry
               </h2>
-              <p className="max-w-[550px] mt-3">
+              <p className="max-w-[550px] mt-3 text-muted-foreground">
                 Five recent projects across five industries. Each one started
                 with how the business really works.
               </p>
@@ -452,6 +474,7 @@ function ERPSoftware() {
                 tags,
                 statValue,
                 statLabel,
+                logo,
               }) => (
                 <Card
                   role="article"
@@ -473,7 +496,7 @@ function ERPSoftware() {
                       </span>
                       <span className="absolute bottom-3 left-3 inline-flex max-w-[85%] items-center gap-1.5 truncate rounded-full border border-white/80 bg-white/80 px-2.5 py-2 text-[12px] font-medium text-[#1d2d31] shadow-sm sm:text-[12px]">
                         <Camera size={11} className="shrink-0" />
-                        <span className="truncate">{photo}</span>
+                        <span className="truncate font-semibold">Photo. {photo}</span>
                       </span>
                     </div>
 
@@ -483,18 +506,18 @@ function ERPSoftware() {
                       <p
                         className={`flex items-center gap-1.5 md:text-[20px] font-bold tracking-[.12em] text-nigma-teal-dark text-[18px]`}
                       >
-                        {<Sparkles size={12} />}
+                        {logo}
                         {featured ? `Featured · ${category}` : category}
                       </p>
 
                       <h3
-                        className={`mt-2 font-heading font-semibold leading-[1.05] tracking-[-0.04em] text-[#111b1d] ${featured ? "md:text-[20px] text-[18px]" : "md:text-[20px] text-[18px]"}`}
+                        className={`mt-2 font-heading font-semibold leading-[1.05] tracking-[-0.04em] text-[#111b1d] ${featured ? "md:text-[35px] text-[18px]" : "md:text-[20px] text-[18px]"}`}
                       >
                         {title}
                       </h3>
 
                       <p className="mt-2 md:text-[15px] leading-tight text-muted-foreground text-[17px]">
-                        ({client})
+                        [{client}]
                       </p>
 
                       <p
@@ -508,7 +531,7 @@ function ERPSoftware() {
                           <Badge
                             key={tag}
                             variant="secondary"
-                            className="h-auto rounded-xl bg-white px-2.5 py-1.5 md:text-[14px] font-medium text-[#1c2b2d] shadow-[inset_0_0_0_1px_rgba(17,27,29,0.06)] text-[13px]"
+                            className="h-auto rounded-xl bg-[var(--muted)] border-0 ring-0 px-2.5 py-1.5 md:text-[14px] font-medium text-[#1c2b2d] shadow-[inset_0_0_0_1px_rgba(17,27,29,0.06)] text-[13px]"
                           >
                             {tag}
                           </Badge>
@@ -521,7 +544,7 @@ function ERPSoftware() {
                         >
                           [{statValue}]
                         </span>
-                        <span className="pb-1 md:text-[14px] leading-tight text-muted-foreground text-[12px]">
+                        <span className="pb-1 md:text-[14px] font-semibold leading-tight text-muted-foreground text-[12px]">
                           {statLabel}
                         </span>
                       </div>
@@ -534,30 +557,29 @@ function ERPSoftware() {
         </div>
       </section>
 
-      <section id="capabilities" className="px-4 pb-16 pt-5 sm:px-6 sm:pb-20">
+      <section id="capabilities" className="scroll-mt-20 px-4 pb-16 pt-5 sm:px-6 sm:pb-20">
         <div className="mx-auto max-w-[1250px]">
           <div className="mb-9 max-w-2xl">
-            <p className="text-md font-bold uppercase tracking-[.18em] text-nigma-teal-dark">
-              Connected work
+            <p className="text-[20px] font-bold tracking-[.18em] text-nigma-teal-dark">
+              Modules
             </p>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
               One system for the whole business
             </h2>
             <p className="mt-3 text-[17px] leading-6 text-muted-foreground">
-              Bring core workflows together in one ERP environment, with
-              information flowing between the teams who need it.
+             Start with the modules you need now, then add more as your business grows. They all share one database.
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {modules.map(([Icon, title, copy]) => (
               <Card
                 role="article"
                 key={title}
-                className="rounded-xl h-[190px] border-0 shadow-[1px 1px 1px 2px rgb(5 10 11 / 5%)] bg-[var(--muted)] p-[17px] shadow-[0_6px_20px_rgba(5,10,11,0.04)]"
+                className="rounded-xl h-[190px] rounded-[22px] border border-white bg-[#f7f8f8] p-0 ring-0 shadow-[0_8px_24px_rgba(5,10,11,0.06)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(5,10,11,0.1)] p-[17px]"
               >
-                <div className="flex items-center w-[235px]">
-                  <span className="grid size-12 place-items-center rounded-lg text-nigma-teal-dark">
+                <div className="flex items-center gap-3 w-[235px]">
+                  <span className="rounded-lg text-nigma-teal-dark">
                     <Icon size={23} />
                   </span>
 
@@ -577,7 +599,7 @@ function ERPSoftware() {
 
       <section className="px-4 py-8 sm:px-6 sm:py-12">
         <div className="mx-auto max-w-[1250px]">
-          <p className="mb-3 text-md font-bold uppercase tracking-[.16em] text-nigma-teal-dark">
+          <p className="mb-3 text-[20px] font-bold tracking-[.16em] text-nigma-teal-dark">
             Clients
           </p>
           <div className="grid grid-cols-1 items-center gap-3 sm:gap-5 lg:grid-cols-[1.2fr_.8fr]">
@@ -601,8 +623,8 @@ function ERPSoftware() {
                 </blockquote>
               </div>
               <div className="mt-4 flex items-center gap-2">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-nigma-teal text-nigma-ink">
-                  <UsersRound size={23} />
+                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-nigma-teal text-white">
+                  <UsersRound size={21} />
                 </span>
                 <div className="min-w-0">
                   <p className="truncate md:text-[15px] font-bold text-md">
@@ -628,10 +650,10 @@ function ERPSoftware() {
         </div>
       </section>
 
-      <section id="implementation" className="px-4 py-16 sm:px-6 sm:py-20">
+      <section id="implementation" className="scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-[1250px]">
           <div className="mb-8">
-            <p className="text-md font-bold uppercase tracking-[.18em] text-nigma-teal-dark">
+            <p className="text-[20px] font-bold tracking-[.18em] text-nigma-teal-dark">
               What we do
             </p>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -642,7 +664,7 @@ function ERPSoftware() {
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
-            {practices.map(([Icon, title, copy], i) => (
+            {practices.map(([ title, copy], i) => (
               <Card
                 role="article"
                 key={title}
@@ -668,8 +690,8 @@ function ERPSoftware() {
       <section className="bg-[radial-gradient(ellipse_at_85%_25%,rgba(22,115,128,0.38),transparent_48%),linear-gradient(116deg,#050A0B,#0C1415_60%,#0C3337)] px-4 py-16 text-white sm:px-6 sm:py-20">
         <div className="mx-auto max-w-[1250px]">
           <div className="mb-8 max-w-2xl">
-            <p className="text-md font-bold uppercase tracking-[.18em] text-nigma-teal-light">
-              Made for the real world
+            <p className="text-[20px] font-bold tracking-[.18em] text-nigma-teal-light">
+              Built for how business work here
             </p>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Connected to the tools and rules you deal with
@@ -685,12 +707,14 @@ function ERPSoftware() {
                 key={title}
                 className="rounded-xl border border-white/10 bg-white/[.045] p-5"
               >
-                <span className="grid size-12 place-items-center rounded-lg bg-nigma-teal/15 text-nigma-teal-light">
-                  <Icon size={26} />
-                </span>
-                <h3 className="mt-4 font-heading text-xl font-semibold text-white">
-                  {title}
-                </h3>
+                <div className="flex items-center gap-3">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg text-nigma-teal-light">
+                    <Icon size={26} />
+                  </span>
+                  <h3 className="m-0 font-heading text-xl font-semibold text-white">
+                    {title}
+                  </h3>
+                  </div>
                 <p className="mt-2 text-[15px] leading-5 text-white/55">
                   {copy}
                 </p>
@@ -715,7 +739,7 @@ function ERPSoftware() {
                   {steps.map(({ number, title, copy }, i) => (
                     <Card role="article" className="gap-0 ring-0 process-card" key={number}>
                       <div>
-                        <b>{number}</b>
+                        <b className="rounded-full p-1.5 bg-nigma-teal-dark text-nigma-ink">{number}</b>
                         {i < steps.length - 1 && <span />}
                       </div>
                       <h3>{title}</h3>
@@ -748,7 +772,7 @@ function ERPSoftware() {
         </div>
       </section>
 
-      <section id="faq" className="px-4 py-16 sm:px-6 sm:py-20">
+      <section id="faq" className="scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl">
           <div className="mb-8 text-center">
             <p className="text-2xl font-bold uppercase tracking-[.18em] text-nigma-teal-dark">
@@ -783,7 +807,7 @@ function ERPSoftware() {
                   
                   <h2>Let's map your processes</h2>
                   <p>
-                    book a 30-minute call. We'll walk though your ERP or custom software needs and give you a clear next step.
+                    A free 45-minute consultation with an ERP lead. You'll leave with a clear picture of what to automate first.
                   </p>
                   <div className="home-actions">
                   <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
@@ -797,7 +821,8 @@ function ERPSoftware() {
               </div>
             </section>
       <Footer />
-    </main>
+      </main>
+    </>
   );
 }
 

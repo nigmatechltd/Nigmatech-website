@@ -20,7 +20,6 @@ const footerSections = [
     title: 'Company',
     links: [
       { label: 'About us', to: '/about' },
-      { label: 'Case studies', to: '/case-study' },
       { label: 'Careers', to: '/careers' },
       { label: 'Contact', to: '/contact' },
     ],
@@ -29,7 +28,7 @@ const footerSections = [
     title: 'Resources',
     links: [
       { label: 'Help center' },
-      { label: 'Book a consolution', to: '/contact' },
+      { label: 'Book a consultation', to: '/contact' },
       { label: 'Privacy policy' },
       { label: 'Terms of service' },
     ],
@@ -77,7 +76,7 @@ function Footer() {
             <span className="font-heading text-md font-semibold">Nigmatech</span>
           </Link>
           <p className="max-w-sm text-md leading-relaxed text-white/60">
-            Nuvio for cloud kitchens, plus ERP and custom software for growing businesses. Built in Lagos.
+            ESP and custom software for growing businesses Built in Lagos
           </p>
           <a
             href="mailto:info@nigmatech.net"
@@ -97,8 +96,9 @@ function Footer() {
         ))}
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between px-5 lg:px-10">
+      <div className="mx-auto max-w-360 px-5 sm:px-8 lg:px-8">
+        <div aria-hidden="true" className="h-px bg-white/10" />
+        <div className="flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-md text-white/50">
             © {new Date().getFullYear()} Nigmatech Limited. All rights reserved.
           </p>
