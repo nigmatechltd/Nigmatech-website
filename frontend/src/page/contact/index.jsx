@@ -266,7 +266,7 @@ function Contact() {
 
               <Button
                 type="submit"
-                className="mt-4 h-auto min-h-11 w-full rounded-full bg-nigma-teal px-5 text-sm font-bold text-nigma-ink shadow-md shadow-nigma-ink/10 hover:bg-nigma-teal-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-nigma-teal-dark"
+                className="mt-4 h-auto cursor-pointer min-h-11 w-full rounded-full bg-nigma-teal px-5 text-sm font-bold text-nigma-ink shadow-md shadow-nigma-ink/10 hover:bg-nigma-teal-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-nigma-teal-dark"
               >
                 Request a call
                 <ArrowRight aria-hidden="true" className="size-4" />

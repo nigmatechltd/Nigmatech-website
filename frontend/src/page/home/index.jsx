@@ -151,78 +151,80 @@ function DashboardPreview() {
 
   return (
     <div
-      className="dashboard-preview"
+      className="relative mx-auto aspect-[0.76] w-full max-w-[500px] overflow-hidden rounded-[22px] border border-white/20 bg-white text-[#050a0b] shadow-[0_28px_70px_rgba(0,0,0,0.35)] sm:aspect-square lg:translate-x-6"
       role="img"
-      aria-label="Finance dashboard showing revenue, receivables, monthly income and expenses, recent invoices, and an approved estimate notification"
+      aria-label="Illustrative finance dashboard showing revenue, receivables, income versus expenses, and recent invoices"
     >
-      <div className="dashboard-window">
-        <div className="dashboard-browser" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-          <span><LockKeyhole aria-hidden="true" size={10} />erp.yourcompany.com/app/accounting</span>
+      <div className="flex h-full min-w-0 flex-col overflow-hidden rounded-[inherit]">
+        <div className="flex h-9 shrink-0 items-center gap-1.5 border-b border-black/5 bg-[#f2f1ee] px-3" aria-hidden="true">
+          <i className="size-2 rounded-full bg-[#d8d6d1]" />
+          <i className="size-2 rounded-full bg-[#d8d6d1]" />
+          <i className="size-2 rounded-full bg-[#d8d6d1]" />
+          <span className="ml-1 flex min-w-0 max-w-[78%] items-center gap-1.5 truncate rounded-full bg-white px-2.5 py-1 text-[10px] text-[#596667]">
+            <span className="size-1.5 shrink-0 rounded-full bg-[#d8d6d1]" />
+            <span className="truncate">erp.yourcompany.app/app/accounting</span>
+          </span>
         </div>
-        <div className="dashboard-inner">
-          <div className="dashboard-title">
-            <span>
-              <b>Finance overview</b>
-              <small>FY 2026 · All branches</small>
-            </span>
-            
+        <div className="flex min-h-0 flex-1 flex-col p-3 sm:p-4">
+          <div className="grid gap-0.5">
+            <b className="font-heading text-sm font-semibold sm:text-base">Finance overview</b>
+            <small className="text-[10px] text-[#596667] sm:text-[11px]">FY 2026 · All branches</small>
           </div>
 
-          <div className="dashboard-metrics">
-            <div>
-              <small>Revenue (YTD)</small>
-              <b>₦412m</b>
-              <span className="metric-positive">+18%</span>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <div className="grid min-w-0 gap-1 rounded-xl bg-[#f3f2ef] p-2.5 sm:p-3">
+              <small className="truncate text-[12px] text-[#596667] sm:text-[13px]">Revenue (YTD)</small>
+              <b className="font-heading text-sm font-semibold sm:text-base">₦412m</b>
+              <span className="text-[12px] font-medium text-[#167380] sm:text-[13px]">+18%</span>
             </div>
-            <div className="dashboard-receivables">
-              <small>Receivables</small>
-              <b>₦38.4m</b>
-              <span className="metric-negative">−6% overdue</span>
+            <div className="grid min-w-0 gap-1 rounded-xl bg-[#f3f2ef] p-2.5 sm:p-3">
+              <small className="truncate text-[12px] text-[#596667] sm:text-[13px]">Receivables</small>
+              <b className="font-heading text-sm font-semibold sm:text-base">₦38.4m</b>
+              <span className="truncate text-[12px] font-medium text-[#167380] sm:text-[13px]">−6% overdue</span>
             </div>
           </div>
 
-          <div className="dashboard-chart">
-            <div className="dashboard-chart-title">
-              <b>Income vs expenses</b>
-              <small>Monthly</small>
+          <div className="mt-2 rounded-xl bg-[#f3f2ef] p-2.5 sm:p-3">
+            <div className="flex items-center justify-between gap-2 text-[12px]">
+              <b className="font-semibold">Income vs expenses</b>
+              <small className="text-[12px] text-[#596667]">Monthly</small>
             </div>
-            <div className="dashboard-bars" aria-hidden="true">
+            <div className="mt-2 flex h-[58px] items-end gap-1.5 overflow-hidden sm:h-[76px]" aria-hidden="true">
               {income.map((height, index) => (
-                <span className="dashboard-bar-pair" key={index}>
-                  <i style={{ height: `${height}%` }} />
-                  <i style={{ height: `${expenses[index]}%` }} />
+                <span className="flex h-full min-w-0 flex-1 items-end gap-0.5" key={index}>
+                  <i className="min-w-0 flex-1 rounded-t-[3px] bg-[#25a1b0]" style={{ height: `${height}%` }} />
+                  <i className="min-w-0 flex-1 rounded-t-[3px] bg-[#bfe3e7]" style={{ height: `${expenses[index]}%` }} />
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="dashboard-order-list" aria-label="Recent invoices">
-            <div className="dashboard-order">
-              <span><b>Lagos Retail Co.</b><small>ACC-SINV-0918</small></span>
-              <em>Paid</em>
-              <span className="dashboard-order-amount">₦2,450,000</span>
+          <div className="mt-2 flex-1" aria-label="Recent invoices">
+            <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-1.5 border-b border-black/10 py-1.5 sm:gap-2">
+              <span className="grid min-w-0 gap-0.5">
+                <b className="truncate text-[11px] font-semibold">Lagos Retail Co.</b>
+                <small className="truncate text-[10px] text-[#596667]">ACC-SINV-0918</small>
+              </span>
+              <em className="rounded-full bg-[#dceff1] px-2 py-1 text-[11px] not-italic text-[#167380]">Paid</em>
+              <span className="whitespace-nowrap text-[11px] font-medium sm:text-[11px]">₦2,450,000</span>
             </div>
-            <div className="dashboard-order">
-              <span><b>Eko Foods Ltd</b><small>ACC-SINV-0917</small></span>
-              <em className="dashboard-pending">Pending</em>
-              <span className="dashboard-order-amount">₦880,000</span>
+            <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-1.5 border-b border-black/10 py-1.5 sm:gap-2">
+              <span className="grid min-w-0 gap-0.5">
+                <b className="truncate text-[11px] font-semibold">Eko Foods Ltd</b>
+                <small className="truncate text-[10px] text-[#596667]">ACC-SINV-0917</small>
+              </span>
+              <em className="rounded-full bg-[#e8e7e4] px-2 py-1 text-[11px] not-italic text-[#404849]">Pending</em>
+              <span className="whitespace-nowrap text-[11px] font-medium sm:text-[11px]">₦880,000</span>
             </div>
-            <div className="dashboard-order">
-              <span><b>Prime Supplies</b><small>ACC-PINV-0332</small></span>
-              <em>Paid</em>
-              <span className="dashboard-order-amount">₦1,120,000</span>
+            <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-1.5 py-1.5 sm:gap-2">
+              <span className="grid min-w-0 gap-0.5">
+                <b className="truncate text-[11px] font-semibold">Prime Supplies</b>
+                <small className="truncate text-[11px] text-[#596667]">ACC-PINV-0332</small>
+              </span>
+              <em className="rounded-full bg-[#dceff1] px-2 py-1 text-[11px] not-italic text-[#167380]">Paid</em>
+              <span className="whitespace-nowrap text-[10px] font-medium sm:text-[11px]">₦1,120,000</span>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="dashboard-notification" aria-hidden="true">
-        <span><Check size={17} /></span>
-        <div>
-          <b>Estimate approved</b>
-          <small>₦4,250,000 · Kitchen cabinets · EST-0418</small>
         </div>
       </div>
     </div>

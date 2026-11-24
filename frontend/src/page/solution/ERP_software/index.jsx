@@ -257,7 +257,7 @@ function DashboardPreview() {
 
   return (
     <div
-      className="relative mx-auto aspect-[0.72] w-full max-w-[500px] overflow-hidden rounded-[22px] border border-white/20 bg-white text-[#050a0b] shadow-[0_28px_70px_rgba(0,0,0,0.35)] sm:aspect-square lg:translate-x-6"
+      className="relative mx-auto aspect-[0.76] w-full max-w-[500px] overflow-hidden rounded-[22px] border border-white/20 bg-white text-[#050a0b] shadow-[0_28px_70px_rgba(0,0,0,0.35)] sm:aspect-square lg:translate-x-6"
       role="img"
       aria-label="Illustrative finance dashboard showing revenue, receivables, income versus expenses, and recent invoices"
     >
@@ -576,7 +576,7 @@ function ERPSoftware() {
               <Card
                 role="article"
                 key={title}
-                className="rounded-xl h-[190px] rounded-[22px] border border-white bg-[#f7f8f8] p-0 ring-0 shadow-[0_8px_24px_rgba(5,10,11,0.06)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(5,10,11,0.1)] p-[17px]"
+                className="rounded-xl h-[150px] rounded-[22px] border border-white bg-[#f7f8f8] p-0 ring-0 shadow-[0_8px_24px_rgba(5,10,11,0.06)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(5,10,11,0.1)] p-[17px]"
               >
                 <div className="flex items-center gap-3 w-[235px]">
                   <span className="rounded-lg text-nigma-teal-dark">

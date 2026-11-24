@@ -806,8 +806,8 @@ font-size: 17px;
   color: var(--muted-foreground);
 }
 .solution-nuvio .solution-meta > span {
-  background: rgb(37 161 176 / 20%);
-  color: var(--nigma-teal-light);
+  background: var(--nigma-teal-dark);
+  color: var(--nigma-dark);
 }
 .solution-nuvio .solution-meta small,
 .solution-nuvio .solution-meta > svg:last-child {
@@ -1909,7 +1909,7 @@ font-size: 17px;
   color: var(--nigma-teal-dark);
 }
 .dashboard-metrics .metric-negative {
-  color: var(--nigma-error);
+  color: var(--nigma-teal-dark);
 }
 .dashboard-chart {
   margin-top: 8px;

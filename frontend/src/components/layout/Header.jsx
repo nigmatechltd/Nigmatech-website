@@ -66,9 +66,10 @@ function Header() {
                     <span className="text-sm leading-relaxed text-white/55 group-hover/dropdown-menu-item:text-white/55">
                       ERP implimentation, customization and support for growing businesses.
                     </span>
-                    <ArrowUpRight aria-hidden="true" className="size-4 text-nigma-teal-dark group-hover/dropdown-menu-item:text-nigma-teal-dark" />
+                  
                   </div>
                 </span>
+                  <ArrowUpRight aria-hidden="true" className="size-4 text-nigma-teal-dark group-hover/dropdown-menu-item:text-nigma-teal-dark font-bold" />
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
