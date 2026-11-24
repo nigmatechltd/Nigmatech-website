@@ -814,7 +814,7 @@ font-size: 17px;
   color: rgb(255 255 255 / 55%);
 }
 .solution-card h3 {
-  max-width: 360px;
+  max-width: 400px;
   margin: 17px 0 0;
   font-size: 25px;
   line-height: 1.2;
@@ -832,7 +832,7 @@ font-size: 17px;
 .solution-art {
   position: relative;
   display: grid;
-  min-height: 130px;
+  min-height: 170px;
   flex: 1;
   place-items: center;
   margin: 17px 0 13px;
@@ -945,18 +945,15 @@ font-size: 17px;
   position: relative;
   min-height: 164px;
   padding: 17px;
-  border: 1px solid rgb(255 255 255 / 12%);
+  border-top: 1px solid rgb(255 255 255 / 12%);
   border-radius: 12px;
   background: rgb(255 255 255 / 5%);
 }
 .capability-icon {
   display: grid;
   width: 50px;
-  height: 50px;
+  height: 55px;
   place-items: center;
-  border: 1px solid rgb(111 202 212 / 20%);
-  border-radius: 8px;
-  background: rgb(37 161 176 / 12%);
   color: var(--nigma-teal-light);
 }
 .industry-icon {
@@ -971,7 +968,6 @@ font-size: 17px;
 }
 
 .capability-card h3 {
-  margin: 15px 0 0;
   color: var(--nigma-white);
   font-size: 18px;
 }

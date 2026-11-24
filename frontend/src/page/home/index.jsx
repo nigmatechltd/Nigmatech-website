@@ -29,6 +29,8 @@ import {
   Utensils,
   Workflow,
   Zap,
+  Target,
+  MapPin,
 } from "lucide-react";
 import "./home.css";
 
@@ -54,7 +56,7 @@ const solutions = [
   {
     id: "erp",
     label: "Custom software",
-    title: "Built around your process when off-the-shelf software does not fit.",
+    title: "Built around your process when nothing off the shelf fits",
     copy: "Business applications, workflow automation, and integrations that connect your ERP, payment gateways, and messaging—supported for the long term.",
     to: "/contact",
     action: "Discuss your project",
@@ -64,7 +66,7 @@ const solutions = [
 
 const capabilities = [
   {
-    Icon: Workflow,
+    Icon: Target,
     title: "Business-first",
     copy: "We start from your operations and margins, not from a feature list",
   },
@@ -74,7 +76,7 @@ const capabilities = [
     copy: "Working software delivered in weeks, with regular demonstrations.",
   },
   {
-    Icon: LocationEdit,
+    Icon: MapPin,
     title: "Built for local operations.",
     copy: "Local payment gateways, WhatsApp, and local tax rules are built in.",
   },
@@ -387,10 +389,12 @@ function Home() {
           <div className="capability-grid">
             {capabilities.map(({ Icon, title, copy }, i) => (
               <Card role="article" className="gap-0 ring-0 capability-card" key={title}>
-                <span className="capability-icon">
-                  <Icon size={25} />
-                </span>
+                <div className="flex items-center gap-2">
+                   <span className="flex size-10 shrink-0 items-center justify-center rounded-lg text-nigma-teal-light">
+                    <Icon size={26} />
+                  </span>
                 <h3>{title}</h3>
+                </div>
                 <p>{copy}</p>
               </Card>
             ))}
@@ -413,7 +417,7 @@ function Home() {
             {steps.map(({ number, title, copy }, i) => (
               <Card role="article" className="gap-0 ring-0 process-card" key={number}>
                 <div>
-                  <b>{number}</b>
+                  <b className="rounded-full p-1.5 bg-nigma-teal-dark text-nigma-ink">{number}</b>
                   {i < steps.length - 1 && <span />}
                 </div>
                 <h3>{title}</h3>
