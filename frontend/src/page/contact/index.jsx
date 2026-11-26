@@ -10,6 +10,9 @@ import {
   Database,
   Cpu,
   HelpCircle,
+  Code,
+  Settings,
+  Sparkle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Badge } from "../../components/ui/badge";
@@ -26,19 +29,12 @@ import {
 import { Textarea } from "../../components/ui/textarea";
 
 const interests = [
-  {label :"Nuvio", icon: Layers}, 
-  {label :"ERP", icon: Database}, 
-  {label :"Custom software", icon: Cpu}, 
-  {label :"Something else", icon: HelpCircle}];
-// {
-//     id: "nuvio",
-//     label: "ERP Software",
-//     title: "ERP implimented properly for your business",
-//     copy: "Finance, inventory, manufacturing, projects, HR and CRM in one system, set up around how you actually work and supported after go-live",
-//     to: "/solution/erp-software",
-//     action: "Explore ERP Software",
-//     Icon: Layers3,
-//   },
+  {label :"ERP implementation", icon: Layers}, 
+  {label :"Custom software", icon: Code}, 
+  {label :"Support & optimization", icon: Settings}, 
+  
+  {label :"Something else", icon: Sparkle}];
+
 const inputClass =
   "mt-1.5 h-10 w-full rounded-lg border border-border bg-white px-3 text-md text-nigma-ink placeholder:text-muted-foreground/70 outline-none transition focus:border-nigma-teal focus:ring-2 focus:ring-nigma-teal/20";
 const labelClass = "block text-[16px] font-semibold text-nigma-ink";
@@ -213,12 +209,12 @@ function Contact() {
 
               <fieldset className="mt-4">
                 <legend className={labelClass}>I&apos;m interested in</legend>
-                <div className="mt-2 grid md:grid-cols-2 grid-cols-1 w-[350px] gap-1.5">
+                <div className="mt-2 grid md:grid-cols-2 grid-cols-1 w-[430px] gap-3">
                   {interests.map(({ label, icon: Icon }) => (
                     <Button
                       key={label}
                       variant="outline"
-                      className={`h-auto min-h-8 rounded-full flex items-center w-[170px] gap-2 justify-content px-3 text-md font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nigma-teal ${interest === label ? "border-nigma-teal bg-nigma-teal-pale text-nigma-teal-dark" : "border-transparent bg-muted text-muted-foreground hover:border-border hover:bg-muted hover:text-nigma-ink"}`}
+                      className={`h-auto min-h-10 rounded-full flex items-center w-[210px] gap-2 justify-content px-3 text-md font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nigma-teal ${interest === label ? "border-nigma-teal bg-nigma-teal-pale text-nigma-teal-dark" : "border-transparent bg-muted text-muted-foreground hover:border-border hover:bg-muted hover:text-nigma-ink"}`}
                       type="button"
                       aria-pressed={interest === label}
                       onClick={() => setInterest(label)}

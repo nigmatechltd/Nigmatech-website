@@ -837,7 +837,6 @@ font-size: 17px;
   place-items: center;
   margin: 17px 0 13px;
   overflow: hidden;
-  border: 1px solid rgb(5 10 11 / 7%);
   border-radius: 12px;
   background:
     radial-gradient(circle at 78% 12%, rgb(111 202 212 / 35%), transparent 42%),

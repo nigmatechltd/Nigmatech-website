@@ -33,6 +33,8 @@ import {
   MapPin,
 } from "lucide-react";
 import "./home.css";
+import ERPSoftwareImage from '../../assets/NigmaTech ERP Integration Hub.png'
+import CustomSoftwareImage from '../../assets/wide_modern_flat_soft_3d_isometric_style_ui_illust.png'
 
 const sectors = [
   "client logo",
@@ -52,6 +54,7 @@ const solutions = [
     to: "/solution/erp-software",
     action: "Explore ERP Software",
     Icon: Layers3,
+    image : ERPSoftwareImage,
   },
   {
     id: "erp",
@@ -61,6 +64,7 @@ const solutions = [
     to: "/contact",
     action: "Discuss your project",
     Icon: Phone,
+    image : CustomSoftwareImage,
   },
 ];
 
@@ -87,12 +91,12 @@ const steps = [
   {
     number: "01",
     title: "Discover",
-    copy: "We learn how your business really runs: the people, processes, data and limits.",
+    copy: "We learn how your business really runs: the people, processes, data, and limits.",
   },
   {
     number: "02",
     title: "Design",
-    copy: "We agree the scope, workflows and success measures with you before building anything.",
+    copy: "We agree the scope, workflows, and success measures with you before building anything.",
   },
   {
     number: "03",
@@ -127,7 +131,7 @@ const principles = [
 const faqs = [
   {
     q: "What does Nigmatech do?",
-    a: "We implement, customise, and support ERPNext for growing companies. When nothing off the shelf fits, we design and build custom software around your process.",
+    a: "We implement, customise, and support ERP for growing companies. When nothing off the shelf fits, we design and build custom software around your process.",
   },
   {
     q: "Do you only work with Nigerian businesses?",
@@ -242,7 +246,7 @@ function Home() {
             <h1>Software that keeps your business moving.</h1>
             <p className="build">
               We implement ERP software that growing businesses actually use, and build custom software when 
-              nothing off the shelf fits
+              nothing off the shelf fits.
               Then we stay to support it.
             </p>
             <div className="home-actions">
@@ -303,7 +307,7 @@ function Home() {
               supports the systems businesses run on.
             </h2>
             <p>
-              Our ERP consultants and engineers work directly with your team: ERP specialists for Implementation,
+              Our ERP consultants and engineers work directly with your team: ERP specialists for implementation,
               and  builders for anything custom. We measure success by whether your team uses what we deliver.
             </p>
             <Link className="home-text-link" to="/about">
@@ -314,7 +318,7 @@ function Home() {
             <Card role="article" className="gap-0 p-0 ring-0">
               <b>20+</b>
               <strong></strong>
-              <small>Businesses running on systems we built or Implemented</small>
+              <small>Businesses running on systems we built or implemented</small>
             </Card>
             <Card role="article" className="gap-0 p-0 ring-0">
               <b>5</b>
@@ -329,7 +333,7 @@ function Home() {
              <Card role="article" className="gap-0 p-0 ring-0">
               <b>10</b>
               
-              <small>Years Implementing ERP</small>
+              <small>Years implementing ERP</small>
             </Card>
           </div>
         </div>
@@ -340,12 +344,12 @@ function Home() {
           <div className="section-heading heading-row">
             <div>
               <h2>ERP for your whole business and custom software for the gaps.</h2>
-              <p className="">You work directly with the people who Implement, build and support your systems</p>
+              <p className="">You work directly with the people who implement, build, and support your systems</p>
               
             </div>
           </div>
           <div className="solution-grid">
-            {solutions.map(({ id, label, title, copy, to, action, Icon }) => (
+            {solutions.map(({ id, label, title, copy, to, action, Icon, image }) => (
               <Card role="article" className={`solution-card solution-${id} gap-0 ring-0`} key={id}>
                 <div className="solution-meta">
                   <span>
@@ -357,14 +361,12 @@ function Home() {
                 <h3>{title}</h3>
                 <p>{copy}</p>
                 <div className="solution-art" aria-hidden="true">
-                  <div className="solution-art-orbit">
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                  <span>
-                   <Image size={30}/>
-                  </span>
+                  <img
+                    src={image}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                   <small className='text-[14px] font-semibold'>
                     {id === "nuvio"
                       ? "Orders moving together"
@@ -468,9 +470,9 @@ function Home() {
               <span className="eye">Featured project: Manufacturing</span>
               <h3>Estimates in minutes, not days</h3>
               <p>
-                A custom estimating module that prices cabinets from carcass, door, drawer, hardware, material and finish lookup tables, then turns approved estimates into ERP items and orders.
+                A custom estimating module that prices cabinets from carcass, door, drawer, hardware, material, and finish lookup tables, then turns approved estimates into ERP items and orders.
               </p>
-              <Link className="home-text-link" to="/solution/sportlight">
+              <Link className="home-text-link" to="/solution/spotlight">
                 See all spotlight projects <ArrowRight size={14} />
               </Link>
             </div>
@@ -506,9 +508,6 @@ function Home() {
               Book a 30-minute call. We’ll walk through your ERP or custom software needs and give you a clear next step.
             </p>
             <div className="home-actions">
-            <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
-                Book a consultation <ArrowRight size={15} />
-            </Button>
             <Button render={<Link to="/contact" />} variant="outline" className="home-button home-button-outline h-auto">
                 Contact us
             </Button>

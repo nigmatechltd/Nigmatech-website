@@ -12,12 +12,13 @@ function App() {
     <Routes>
       <Route element={<RootLayout />}>
         <Route path="/" element={<Home />} />
+         <Route path="/solution/erp-software" element={<ERPSoftware />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         
       
       </Route>
-        <Route path="/solution/erp-software" element={<ERPSoftware />} />
+       
         
     </Routes>
   )

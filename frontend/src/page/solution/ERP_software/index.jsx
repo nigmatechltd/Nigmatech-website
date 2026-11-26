@@ -33,7 +33,9 @@ import {
   Warehouse,
   Wrench,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 import {
   Accordion,
   AccordionContent,
@@ -45,6 +47,8 @@ import { Button } from "../../../components/ui/button";
 import { Card } from "../../../components/ui/card";
 import Footer from "@/components/layout/Footer";
 
+
+
 const spotlightProjects = [
   {
     featured: true,
@@ -52,7 +56,7 @@ const spotlightProjects = [
     photo: "Cabinet workshop, finished units on the floor",
     title: "Estimates in minutes, not days",
     client: "Cabinet manufacturer",
-    copy: "A custom estimating module that prices cabinets from carcasses, doors, drawer fronts, materials and labour, then turns approved estimates into ERPNext items and orders.",
+    copy: "A custom estimating module that prices cabinets from carcasses, doors, drawer fronts, materials and labour, then turns approved estimates into ERP items and orders.",
     tags: ["Estimating", "Manufacturing", "Selling"],
     statValue: "XX%",
     statLabel: "faster quoting",
@@ -85,7 +89,7 @@ const spotlightProjects = [
     photo: "Retail counter with invoice printer",
     title: "ZATCA e-invoicing, Phase 1 and 2",
     client: "Trading company, Saudi Arabia",
-    copy: "Complete simplified and standard invoices, onboarding and reporting to ZATCA, built into the client's existing ERPNext sales flow.",
+    copy: "Complete simplified and standard invoices, onboarding and reporting to ZATCA, built into the client's existing ERP sales flow.",
     tags: ["Accounting", "Compliance", "Local tax"],
     statValue: "XXk",
     statLabel: "invoices reported to ZATCA",
@@ -96,7 +100,7 @@ const spotlightProjects = [
     photo: "HR team in a bright office",
     title: "HR and payroll for a growing team",
     client: "Multi-site employer",
-    copy: "Unify employee records, leave, attendance, expense claims and payroll in one ERPNext setup across multiple offices.",
+    copy: "Unify employee records, leave, attendance, expense claims and payroll in one ERP setup across multiple offices.",
     tags: ["HR", "Payroll", "People"],
     statValue: "XXX",
     statLabel: "employees on one system",
@@ -108,7 +112,7 @@ const modules = [
   [
     WalletCards,
     "Finance & accounting",
-    "General ledger, receivables, bancking, budgets and multi-company consolidation.",
+    "General ledger, receivables, banking, budgets and multi-company consolidation.",
   ],
   [
     Boxes,
@@ -123,7 +127,7 @@ const modules = [
   [
     UsersRound,
     "Sales & CRM",
-    "Leads , quotations sales orders and pricing rule with a full history for customer.",
+    "Leads , quotations sales orders and pricing rule with a full history for each customer.",
   ],
   [
     User,
@@ -138,12 +142,12 @@ const modules = [
   [
     Layers3,
     "Projects",
-    "Track, timesheets, project costing and client billing.",
+    "Tasks, timesheets, project costing, and client billing.",
   ],
   [
     Headset,
     "Helpdesk",
-    "TCustomer support tickets with service-level targets and self-service portal.",
+    "Customer support tickets with service-level targets and self-service portal.",
   ],
    [
     ChartNoAxesCombined,
@@ -225,12 +229,8 @@ const steps = [
 
 const faqs = [
   [
-    "What is ERPNext?",
-    "ERPNext is a complete, open-source ERP with no per-user licence fees. You own your data and your system, and you can extend it without being into a vendor." ,
-  ],
-  [
     "Can you take over an existing ERP setup?",
-    "Yes. We can review your current system, map the data and processes, and migrate to ERPNext with minimal disruption.",
+    "Yes. We can review your current system, map the data and processes, and migrate to ERP with minimal disruption.",
   ],
   [
     "Cloud or on premise?",
@@ -338,64 +338,41 @@ function DashboardPreview() {
 }
 
 function ERPSoftware() {
+  const location = useLocation();
+
+ useEffect(() => {
+  if (!location.hash) return;
+
+  const sectionId = location.hash.slice(1);
+
+  const timeoutId = setTimeout(() => {
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 100);
+
+  return () => clearTimeout(timeoutId);
+}, [location.pathname, location.hash]);
   return (
     <>
-      <nav
-        aria-label="ERP page navigation"
-        className="fixed left-1/2 top-4 z-50 mx-auto flex min-h-11 w-[calc(100%-2rem)] max-w-[1220px] -translate-x-1/2 items-center justify-between gap-3 rounded-full border border-white/10 bg-[#071112]/95 px-3 py-2 text-[15px] text-white/70 shadow-lg shadow-black/20 backdrop-blur-xl sm:w-[calc(100%-3rem)] sm:px-5"
-      >
-        <Link
-          to="/solution/erp-software"
-          className="flex shrink-0 items-center gap-2 text-[16px] font-bold text-white"
-        >
-          <span className="grid size-6 place-items-center rounded-md bg-nigma-teal text-nigma-ink">
-            <Boxes size={14} />
-          </span>
-          <span>
-            ERP <span className="font-normal text-white/45">Software</span>
-          </span>
-        </Link>
-        <div className="hidden items-center gap-5 md:flex">
-          <a href="#overview" className="text-md hover:text-white">
-            Overview
-          </a>
-          <a href="#projects" className="text-md hover:text-white">
-            Projects
-          </a>
-          <a href="#capabilities" className="text-md hover:text-white">
-            Modules
-          </a>
-          <a href="#implementation" className="text-md hover:text-white">
-            Services
-          </a>
-          <a href="#faq" className="hover:text-white">
-            FAQ
-          </a>
-        </div>
-        <Button
-          render={<Link to="/contact" />}
-          className="h-auto min-h-10 rounded-full bg-nigma-teal px-4 py-2.5 text-[16px] font-bold text-nigma-ink hover:bg-nigma-teal-light"
-        >
-          Book a consultation
-        </Button>
-      </nav>
+    
       <main className="-mt-20 overflow-hidden bg-muted text-nigma-ink">
       <section id="overview" className="home-hero scroll-mt-20">
-        <div aria-hidden="true" className="mb-12 h-11 sm:mb-16" />
         <div className="home-container hero-layout">
           <div className="hero-copy">
             <Badge variant="outline" className="hero-badge h-auto">
               ERP Software
             </Badge>
             <h1>ERP your teams will actually use.</h1>
-            <p className="">We implement, customise and support ERP for growing businesses. Finance, inventory, manufacturing, projects and people in one system, set up around how you actually work.</p>
+            <p className="">We implement, customise, and support ERP for growing businesses. Finance, inventory, manufacturing, projects, and people in one system, set up around how you actually work.</p>
            
             <div className="home-actions">
               <Button
                 render={<Link to="/contact" />}
                 className="home-button home-button-outline h-auto"
               >
-                See spolight projects <ArrowRight size={15} />
+                See spotlight projects <ArrowRight size={15} />
               </Button>
             </div>
             <div className="hero-prove-container">
@@ -445,7 +422,7 @@ function ERPSoftware() {
           <div className="mb-9 flex flex-col justify-between gap-4 sm:mb-11 sm:flex-row sm:items-end">
             <div>
               <p className="text-[20px] font-bold tracking-[.18em] text-nigma-teal-dark">
-                Sportlight projects
+                Spotlight projects
               </p>
               <h2 className="mt-3 max-w-xl font-heading text-3xl font-semibold  tracking-tight sm:text-4xl">
                 ERP that fits the industry
@@ -660,7 +637,7 @@ function ERPSoftware() {
               Implementation done properly
             </h2>
             <p className="mt-3 text-[16px] leading-6 text-muted-foreground">
-             Most ERP projects fail on process and adoption, not software, we focus on both.
+             Most ERP projects fail on process and adoption, not software; we focus on both.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
@@ -691,13 +668,13 @@ function ERPSoftware() {
         <div className="mx-auto max-w-[1250px]">
           <div className="mb-8 max-w-2xl">
             <p className="text-[20px] font-bold tracking-[.18em] text-nigma-teal-light">
-              Built for how business work here
+              Built for how businesses work here
             </p>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Connected to the tools and rules you deal with
             </h2>
             <p className="mt-3 text-[16px] leading-6 text-white/60">
-              We've built the local integrations already, so you don't need to pay for them again
+              We've built the local integrations already, so you don't need to pay for them again.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
@@ -757,10 +734,10 @@ function ERPSoftware() {
               When off-the-shelf doesn’t fit
             </h2>
             <p className="mt-1 text-[14px] leading-5 text-muted-foreground">
-              We design and build business applications, automations and integrations around your process, then support them for the long term.
+              We design and build business applications, automations, and integrations around your process, then support them for the long term.
             </p>
             <p className="mt-2 text-[13px] leading-5 text-muted-foreground">
-              Technologies: Frappe &amp; ERPNext · Python · FastAPI · Vue · React · MariaDB · REST &amp; webhooks · WhatsApp Cloud API
+              Technologies: Frappe &amp; ERP · Python · FastAPI · Vue · React · MariaDB · REST &amp; webhooks · WhatsApp Cloud API
             </p>
           </div>
           <Link
@@ -810,9 +787,7 @@ function ERPSoftware() {
                     A free 45-minute consultation with an ERP lead. You'll leave with a clear picture of what to automate first.
                   </p>
                   <div className="home-actions">
-                  <Button render={<Link to="/contact" />} className="home-button home-button-primary h-auto">
-                      Book a consultation <ArrowRight size={15} />
-                  </Button>
+                 
                   <Button render={<Link to="/contact" />} variant="outline" className="home-button home-button-outline h-auto">
                       Contact us
                   </Button>
@@ -820,7 +795,7 @@ function ERPSoftware() {
                 </div>
               </div>
             </section>
-      <Footer />
+      
       </main>
     </>
   );

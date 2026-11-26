@@ -13,7 +13,7 @@ const footerSections = [
       
       { label: 'ERP Software', to: '/solution/erp-software' },
       { label: 'Custom software', to: '/contact' },
-      { label: 'Sportlight projects', to: '/solution/sportlight' },
+      { label: 'Spotlight projects', to: '/solution/spotlight' },
     ],
   },
   {
@@ -76,7 +76,7 @@ function Footer() {
             <span className="font-heading text-md font-semibold">Nigmatech</span>
           </Link>
           <p className="max-w-sm text-md leading-relaxed text-white/60">
-            ESP and custom software for growing businesses Built in Lagos
+            ERP and custom software for growing businesses. Built in Lagos
           </p>
           <a
             href="mailto:info@nigmatech.net"

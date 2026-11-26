@@ -57,7 +57,7 @@ const products = [
 const team = ['Product & engineering', 'ERP consulting', 'Implementation', 'Customer success']
 
 const questions = [
-  ['What does Nigmatech build?', 'We build Nuvio for cloud kitchens, implement and customise ERPNext, and create custom business software, automation and integrations.'],
+  ['What does Nigmatech build?', 'We build Nuvio for cloud kitchens, implement and customise ERP, and create custom business software, automation and integrations.'],
   ['Who do you work with?', 'We work with growing businesses and cloud kitchens that need practical software for their operations.'],
   ['Where is Nigmatech based?', 'Nigmatech is based in Lagos, Nigeria.'],
   ['Do you support clients after launch?', 'Yes. Ongoing support is part of how we work; we support the software we build and implement.'],
@@ -102,10 +102,10 @@ function About() {
               ERP first, built for the long term.
             </h2>
             <p className="mt-5 text-[17px] leading-7 text-muted-foreground">
-              We started by implementing ERP for businesses that needed systems that their teams would actually use. not just a go-live date.
+              We started by implementing ERP for businesses that needed systems that their teams would actually use, not just a go-live date.
             </p>
             <p className="mt-4 text-[17px] leading-7 text-muted-foreground">
-              Today we implement ERP across manufacturing, construction, distribution, retail and HR, and build custom software when nothing off the shelf fits with the same practical, long-term approach.
+              Today we implement ERP across manufacturing, construction, distribution, retail, and HR, and build custom software when nothing off the shelf fits, with the same practical, long-term approach.
             </p>
           </div>
         </div>
@@ -168,7 +168,7 @@ function About() {
         <div className="mx-auto w-[min(1220px,calc(100%-40px))] sm:w-[min(1220px,calc(100%-64px))]">
           <p className="text-3xl font-bold text-nigma-teal-dark">The team</p>
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-[40px]">The people behind the software</h2>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-muted-foreground">Engineers, ERP consultants and product people based in Lagos.</p>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-muted-foreground">Engineers, ERP consultants, and product people.</p>
           <div className="mt-8 grid grid-cols-1 gap-x-4 gap-y-7 sm:grid-cols-4 sm:gap-5">
             {team.map((role) => (
               <div key={role}>
