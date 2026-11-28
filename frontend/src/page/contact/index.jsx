@@ -232,7 +232,7 @@ function Contact() {
               </fieldset>
 
               <label className={`${labelClass} mt-4 block`}>
-                Business size
+                Company size
                 <Select name="businessSize" defaultValue={null}>
                   <SelectTrigger
                     className={`${inputClass} mt-1.5 h-10 appearance-none`}
@@ -255,7 +255,7 @@ function Contact() {
                   required={true}
                   rows="3"
                   className="mt-1.5 min-h-24 w-full resize-y rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-nigma-ink placeholder:text-muted-foreground/70 outline-none transition focus:border-nigma-teal focus:ring-2 focus:ring-nigma-teal/20"
-                  placeholder="Tell us about your current systems and what you'd like to improve..."
+                  placeholder="Tell us about your business, your current systems and what you'd like to improve..."
                 />
               </label>
               <input type="hidden" name="interest" value={interest} />

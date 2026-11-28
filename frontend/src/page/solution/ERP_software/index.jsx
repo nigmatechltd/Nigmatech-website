@@ -45,7 +45,14 @@ import {
 import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
 import { Card } from "../../../components/ui/card";
-import Footer from "@/components/layout/Footer";
+import img1 from "../../../assets/Modern Walnut Cabinetry Workshop.png";
+import img2 from "../../../assets/Construction Project Dashboard On Site.png";
+import img3 from "../../../assets/Precision in the Cabinet Workshop.jpg";
+import img4 from "../../../assets/Warehouse Inventory Management Aisle.jpg";
+import img5 from "../../../assets/Friendly Cashier at Smart Checkout.jpg";
+import img6 from "../../../assets/ERP Engineer on the Factory Floor.jpg";
+
+
 
 
 
@@ -60,7 +67,8 @@ const spotlightProjects = [
     tags: ["Estimating", "Manufacturing", "Selling"],
     statValue: "XX%",
     statLabel: "faster quoting",
-    logo: <Factory size={16} />
+    logo: <Factory size={16} />,
+    image : img1
   },
   {
     category: "Construction",
@@ -71,7 +79,8 @@ const spotlightProjects = [
     tags: ["Projects", "Cost control", "Buying"],
     statValue: "XX",
     statLabel: "active projects tracked",
-    logo: <HardHat size={16} />
+    logo: <HardHat size={16} />,
+    image : img2
   },
   {
     category: "Trade distribution",
@@ -82,7 +91,8 @@ const spotlightProjects = [
     tags: ["Buying", "Stock", "Integrations"],
     statValue: "XXk",
     statLabel: "supplier items synced",
-    logo: <Warehouse size={16} />
+    logo: <Warehouse size={16} />,
+    image : img3
   },
   {
     category: "Retail & trading",
@@ -91,9 +101,10 @@ const spotlightProjects = [
     client: "Trading company, Saudi Arabia",
     copy: "Complete simplified and standard invoices, onboarding and reporting to ZATCA, built into the client's existing ERP sales flow.",
     tags: ["Accounting", "Compliance", "Local tax"],
-    statValue: "XXk",
+    statValue: "XXk", 
     statLabel: "invoices reported to ZATCA",
-    logo: <Store size={16} />
+    logo: <Store size={16} />,
+    image : img4
   },
   {
     category: "Workforce & HR",
@@ -104,7 +115,8 @@ const spotlightProjects = [
     tags: ["HR", "Payroll", "People"],
     statValue: "XXX",
     statLabel: "employees on one system",
-    logo: <UsersRound size={16} />
+    logo: <UsersRound size={16} />,
+    image : img5
   },
 ];
 
@@ -452,6 +464,7 @@ function ERPSoftware() {
                 statValue,
                 statLabel,
                 logo,
+                image,
               }) => (
                 <Card
                   role="article"
@@ -468,9 +481,12 @@ function ERPSoftware() {
                     <div
                       className={`relative flex items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_70%_25%,rgba(111,202,212,0.32),transparent_48%),linear-gradient(145deg,#F7FAF8,#E1F1F1)] ${featured ? "h-[225px] md:h-full" : "h-[230px]"}`}
                     >
-                      <span className="grid size-12 place-items-center rounded-xl border border-[#0b4d59]/15 bg-white/10 text-[#0d4a52] shadow-sm backdrop-blur-sm">
-                        <Image size={22} className="text-[#0d4a52]/75" />
-                      </span>
+                      <img
+                        src={image}
+                        alt={photo}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
                       <span className="absolute bottom-3 left-3 inline-flex max-w-[85%] items-center gap-1.5 truncate rounded-full border border-white/80 bg-white/80 px-2.5 py-2 text-[12px] font-medium text-[#1d2d31] shadow-sm sm:text-[12px]">
                         <Camera size={11} className="shrink-0" />
                         <span className="truncate font-semibold">Photo. {photo}</span>
@@ -618,7 +634,12 @@ function ERPSoftware() {
               aria-label="Photo placeholder for a production manager on the factory floor"
               className="relative flex h-[270px] items-center justify-center overflow-hidden rounded-[22px] border border-white bg-[radial-gradient(ellipse_at_70%_20%,rgba(111,202,212,0.48),transparent_48%),linear-gradient(145deg,#F7FAF8,#E1F1F1)] p-3 shadow-[0_10px_28px_rgba(5,10,11,0.06)] lg:h-[320px]"
             >
-              <Image size={23} className="relative text-nigma-teal-dark/70" />
+                <img
+                        src={img6}
+                        alt="ERP Engineer on the Factory Floor"
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
               <span className="absolute bottom-3 left-3 rounded-full border border-white/80 bg-white/80 px-2 py-1 md:text-[15px] font-medium text-nigma-ink shadow-sm text-[12px]">
                 Photo · Production manager on the factory floor
               </span>

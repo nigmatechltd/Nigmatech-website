@@ -17,6 +17,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '..
 import { Badge } from '../../components/ui/badge'
 import { Button } from '../../components/ui/button'
 import { Card, CardContent } from '../../components/ui/card'
+import storyImg from "../../assets/Modern ERP Dashboard Workspace.jpg";
+import adaeze from "../../assets/adaeze-team-portrait.png";
+import taiwo from "../../assets/taiwo-team-portrait.png";
+import blessing from "../../assets/Blessing.jpg";
+import tunde from "../../assets/Tunde.jpg";
 
 const principles = [
   {
@@ -54,7 +59,29 @@ const products = [
   },
 ]
 
-const team = ['Product & engineering', 'ERP consulting', 'Implementation', 'Customer success']
+const team = [
+  {
+    image : adaeze,
+    name : "Adaeze Okafor",
+    role : 'Product & engineering'
+  },
+   {
+    image : taiwo,
+    name : "Taiwo",
+    role : 'ERP Implementation Lead'
+  },
+  {
+    image : blessing,
+    name : "Blessing",
+    role : ' ERP Support Consultant'
+  },
+  {
+    image : tunde,
+    name : "Tunde Bakare",
+    role : 'Senior Software Engineer'
+  },
+  
+]
 
 const questions = [
   ['What does Nigmatech build?', 'We build Nuvio for cloud kitchens, implement and customise ERP, and create custom business software, automation and integrations.'],
@@ -83,12 +110,15 @@ function About() {
 
       <section className="bg-[radial-gradient(ellipse_at_76%_18%,rgba(191,227,231,0.28),transparent_45%),#f3f6f5] py-16 sm:py-24 lg:py-28">
         <div className="mx-auto grid w-[min(1220px,calc(100%-40px))] items-center gap-10 sm:w-[min(1220px,calc(100%-64px))] lg:grid-cols-[0.95fr_1fr] lg:gap-16">
-          <div className="relative flex aspect-[1.15/1] min-h-64 items-center justify-center overflow-hidden rounded-[1.5rem] border border-white/10 bg-[radial-gradient(ellipse_at_70%_25%,rgba(111,202,212,0.42),transparent_45%),linear-gradient(145deg,#167380,#0C2729_72%,#050A0B)] shadow-xl shadow-nigma-ink/10 sm:aspect-[1.25/1] lg:aspect-square">
+          <div className="relative flex aspect-[1.15/1] min-h-64 items-center justify-center overflow-hidden rounded-[1.5rem] bg-[radial-gradient(ellipse_at_70%_25%,rgba(111,202,212,0.42),transparent_45%),linear-gradient(145deg,#167380,#0C2729_72%,#050A0B)] shadow-xl shadow-nigma-ink/10 sm:aspect-[1.25/1] lg:aspect-square">
             <div className="absolute inset-4 rounded-[1.1rem] border border-white/10" />
             
-              <span className="grid size-12 place-items-center rounded-xl border border-[#0b4d59]/15 text-nigma-teal-dark shadow-sm backdrop-blur-sm">
-                                      <Image size={22} className="nigma-teal-dark" />
-                                    </span>
+              <img
+                                                             src={storyImg}
+                                                             alt="Our story"
+                                                             loading="lazy"
+                                                             className="absolute inset-0 h-full w-full object-cover"
+                                                           />
                                     <span className="absolute bottom-6 left-6 inline-flex max-w-[85%] items-center gap-1.5 truncate rounded-full border border-white/50 bg-[nigma-dark] px-2.5 py-2 text-[12px] font-medium text-[#1d2d31] shadow-sm sm:text-[12px]">
                                       <Camera size={11} className="shrink-0 text-nigma-teal-light" />
                                       <span className="truncate text-white/90">Photo. Team working session in the Lagos office</span>
@@ -170,26 +200,30 @@ function About() {
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-[40px]">The people behind the software</h2>
           <p className="mt-3 max-w-2xl text-base leading-7 text-muted-foreground">Engineers, ERP consultants, and product people.</p>
           <div className="mt-8 grid grid-cols-1 gap-x-4 gap-y-7 sm:grid-cols-4 sm:gap-5">
-            {team.map((role) => (
+            {team.map(({image, name, role}) => (
               <div key={role}>
-                <Card className="relative aspect-[0.92/1] border-white/15 bg-[radial-gradient(ellipse_at_70%_20%,rgba(111,202,212,0.4),transparent_44%),linear-gradient(145deg,#167380,#0C2729_72%,#050A0B)] p-0 shadow-lg shadow-nigma-ink/10">
-                  <CardContent className="absolute inset-0 flex items-center justify-center p-0">
-                  <div className="absolute inset-2.5 rounded-xl border border-white/10" />
-                  <div className="relative flex flex-col items-center gap-2 text-white/80">
-                    <Image aria-hidden="true" className="size-6 text-nigma-teal-light" strokeWidth={1.5} />
-                    
-                  </div>
-                  <span className="absolute bottom-6 left-6 inline-flex max-w-[85%] items-center gap-1.5 truncate rounded-full border border-white/40 bg-[nigma-dark] px-2.5 py-1 text-[12px] font-medium text-[#1d2d31] shadow-sm sm:text-[12px]">
-                                      <Camera size={11} className="shrink-0 text-nigma-teal-light" />
-                                      <span className="truncate text-white/90">
-                                        Photo
-                                      </span>
-                                    </span>
-                  </CardContent>
-                </Card>
-                
-                <p className="mt-1 text-md font-semibold">[Name]</p>
-                <p className="mt-1 text-[14px] text-muted-foreground">[Role]</p>
+                <Card className="relative aspect-[0.92/1] overflow-hidden border-white/15 bg-[radial-gradient(ellipse_at_70%_20%,rgba(111,202,212,0.4),transparent_44%),linear-gradient(145deg,#167380,#0C2729_72%,#050A0B)] p-0 shadow-lg shadow-nigma-ink/10">
+
+  <CardContent className="absolute inset-0 p-0">
+
+    <img
+      src={image}
+      alt={name}
+      loading="lazy"
+      className="absolute inset-0 h-full w-full rounded-[inherit] object-cover"
+    />
+
+    <div className="pointer-events-none absolute inset-2.5 rounded-xl border border-white/10" />
+
+    <span className="absolute bottom-6 left-6 inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-black/50 px-2.5 py-1 text-[12px] font-medium text-white shadow-sm">
+      <Camera size={11} className="shrink-0 text-nigma-teal-light" />
+      <span>Photo</span>
+    </span>
+
+  </CardContent>
+</Card>
+                <p className="mt-1 text-md font-semibold">{name}</p>
+                <p className="mt-1 text-[14px] text-muted-foreground">{role}</p>
               </div>
             ))}
           </div>

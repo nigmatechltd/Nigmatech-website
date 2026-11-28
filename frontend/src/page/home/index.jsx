@@ -11,30 +11,19 @@ import { Card } from "../../components/ui/card";
 import {
   ArrowRight,
   ArrowUpRight,
-  Building2,
-  ChartColumnIncreasing,
   Check,
   Image,
   Layers3,
-  LockKeyhole,
-  LocationEdit,
-  MessageCircle,
-  Package,
   Phone,
   Rocket,
-  ShieldCheck,
-  ShoppingBag,
-  Store,
   UsersRound,
-  Utensils,
-  Workflow,
-  Zap,
   Target,
   MapPin,
 } from "lucide-react";
 import "./home.css";
 import ERPSoftwareImage from '../../assets/NigmaTech ERP Integration Hub.png'
 import CustomSoftwareImage from '../../assets/wide_modern_flat_soft_3d_isometric_style_ui_illust.png'
+import ManufacturingImage from '../../assets/Manufacturing Image.png'
 
 const sectors = [
   "client logo",
@@ -463,7 +452,13 @@ function Home() {
           
           <Card role="article" className="gap-0 ring-0 story-card lg:mt-0 mt-20 border md:h-[340px] h-auto">
             <div className="story-visual">
-              <Image aria-hidden="true" size={17} />
+                          
+                            <img
+                                                                           src={ManufacturingImage}
+                                                                           alt="Featured project"
+                                                                           loading="lazy"
+                                                                           className="absolute inset-0 h-full w-full object-cover"
+                                                                         />
               <small>Photo · Cabinet workshop, finished units on the floor</small>
             </div>
             <div className="story-copy">
